@@ -9,8 +9,10 @@
 #   -- Abeebus: https://github.com/13Cubed/Abeebus : scrapes external ips from text file, geo locates them
 
 # Dependencies:
+import yaml
 
+from Resources import libLookout
 
 # Main
 if __name__ == '__main__':
-    print ("main stuff will go here")
+    lookoutObj=libLookout.lookout()
