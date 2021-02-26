@@ -1,0 +1,6 @@
+# Cyber Intelligence Framework: opensource self hosted indicator of threat database
+# https://csirtgadgets.com/collective-intelligence-framework
+cif_port: 5000
+cif_server: 192.168.1.152
+
+lookout_default_inputFolder: "./ToProcess"

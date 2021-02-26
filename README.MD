@@ -9,11 +9,11 @@
 
     --folder [FOLDER [FOLDER ...]] folder path, process files within folder
     --filename FILENAME   single file to process
-    --cif                 query Cyber Intelligence Framework (internal self-hosted server)
+    --cif                 query Cyber Intelligence Framework (CIFv5) (internal self-hosted server)
     --firehol             query FireHOL blocklists
     --scoutprime          query LookingGlass Scout Prime
-    --shodan              Query Shodan (very slow)
-    --all                 Query All Available Modules
+    --shodan              query Shodan (very slow)
+    --all                 query All available modules
     --fullreport          Full Indepth Report (MUCH longer)
     --output OUTPUT       set an output folder, if blank, folder will be date-time run
     -h, --help            Show this help message and exit
