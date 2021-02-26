@@ -16,6 +16,7 @@ from glob import glob
 
 
 from Resources import libLookout
+from Resources import libAbeebus
 
 # Allows user to modify paremeters from commandline at runtime
 def argsParse():
@@ -74,3 +75,9 @@ if __name__ == '__main__':
     print (" --: Folder:", folderName)
     print (" --: FileList to process:", fileList)
     lookoutObj=libLookout.lookout()
+    # abeebus is an open source project that takes files, finds all the IP addresses and GeoLocates them.
+    # i've modified the project into a class/library. It retains a python LIST of all the parsed IP addresses
+    # you can use later:
+    #       abeebusObj.getResults() # returns abeebus results
+    #       abeebusObj.getFilteredAddresses() # returns list of unique IPs found
+    abeebusObj=libAbeebus.abeebus(fileList)
