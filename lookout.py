@@ -36,12 +36,12 @@ def argsParse():
     parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS,
                         help='Show this help message and exit')
     args = vars(parser.parse_args())
-
     return args
 
 # Main
 if __name__ == '__main__':
     YAMLFILE="./lookout.yaml"
+    queryResults={}
 
     if (path.exists(YAMLFILE)):
         print("Loading yaml settings file")
@@ -76,8 +76,18 @@ if __name__ == '__main__':
     print (" --: FileList to process:", fileList)
     lookoutObj=libLookout.lookout()
     # abeebus is an open source project that takes files, finds all the IP addresses and GeoLocates them.
-    # i've modified the project into a class/library. It retains a python LIST of all the parsed IP addresses
-    # you can use later:
+    # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
-    #       abeebusObj.getFilteredAddresses() # returns list of unique IPs found
+    #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
     abeebusObj=libAbeebus.abeebus(fileList)
+    uniqueIPs=abeebusObj.getIPs(fileList[0])
+
+    UniqueIPs={}
+    geoResults={}
+    for filename in fileList:
+        UniqueIPs[filename]={}
+        UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
+        UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+    print (UniqueIPs)
+
+

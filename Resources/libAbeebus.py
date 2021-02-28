@@ -12,33 +12,23 @@ from tqdm import tqdm
 class abeebus:
     def __init__(self, filenames):
         self.filenames=filenames
-        dataResults = self.getData(self.filenames, "")
+        #dataResults = self.getData(self.filenames, "")
 
-    def getData(self, filenames, apiToken):
-        """
-          The given file is scraped for IPv4 addresses, and the addresses are used
-          with the GeoIP location provider to obtain location data in JSON format.
-          The JSON data is then parsed and appended to the 'results' list.
-          """
-        from urllib.request import urlopen
+    def getIPs(self, filename):
+        addresses=[]
+        filteredAddresses=[]
+        # Open each specified file for processing
+        try:
+            f = open(filename, 'r', encoding='ISO-8859-1')
+        except IOError:
+            print('Could not find the specified file:', filename)
+            sys.exit(1)
 
-        addresses = []
-        filteredAddresses = []
-        results = []
-        print ("Pulling IPs from Files and Geo Locating Them, Please Wait..")
-        for filename in filenames:
-            # Open each specified file for processing
-            try:
-                f = open(filename, 'r', encoding='ISO-8859-1')
-            except IOError:
-                print('Could not find the specified file:', filename)
-                sys.exit(1)
-
-            # Parse file for valid IPv4 addresses via RegEx
-            addresses += re.findall(
-                r'(\b(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b)',
-                f.read())
-            f.close()
+        # Parse file for valid IPv4 addresses via RegEx
+        addresses += re.findall(
+            r'(\b(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b)',
+            f.read())
+        f.close()
 
         # Count number of occurrences for each IP address
         from collections import Counter
@@ -57,8 +47,16 @@ class abeebus:
         total = len(filteredAddresses)
         i = 0
         self.filteredAddresses=filteredAddresses
-        # Iterate through new list and obtain GeoIP information from ipinfo.io
-        for filteredAddress in tqdm(filteredAddresses):
+        return filteredAddresses.copy()
+
+    def geoLocate(self, ipList, apiToken):
+        from urllib.request import urlopen
+
+        addresses = []
+        filteredAddresses = []
+        results = []
+
+        for filteredAddress in tqdm(ipList):
             # Show progress bar
             #self.progressBar(i, total, status='Getting Results')
             #i += 1
@@ -67,7 +65,7 @@ class abeebus:
             # Build query URL from found addresses
 
             # Sort addresses by count (descending)
-            results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
+            #results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
 
             if apiToken:
                 url = ('https://ipinfo.io/' + filteredAddress + '/json/?token=' + apiToken)
@@ -108,34 +106,20 @@ class abeebus:
                         formattedData += 'N/A,'
 
             # Get number of occurrences for IP address and add to results
-            addressCount = addressCounts[filteredAddress]
-            formattedData += str(addressCount)
+            # addressCount = addressCounts[filteredAddress]
+            # formattedData += str(addressCount)
 
             # Add final formatted data string to list
             results.append(formattedData)
 
         # Sort results from highest count to lowest
-        results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
+        #results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
         self.dataDict=results.copy()
 
         # Add column headers
         results.insert(0, 'IP Address,Hostname,Country,Region,City,Postal Code,Latitude,Longitude,ASN,Count')
-        self.printData(results)
-
-    def getResults(self):
-        return self.dataDict.copy()
-
-    def progressBar(count, total, status=''):
-        # From https://gist.github.com/vladignatyev/06860ec2040cb497f0f3
-        bar_len = 60
-        filled_len = int(round(bar_len * count / float(total)))
-        percents = round(100.0 * count / float(total), 1)
-        bar = '#' * filled_len + '.' * (bar_len - filled_len)
-        sys.stdout.write('[%s] %s%s ...%s\r' % (bar, percents, '%', status))
-        sys.stdout.flush()
-
-    def getFilteredAddresses(self):
-        return self.filteredAddresses
+        #self.printData(results)
+        return results.copy()
 
     def printData(self,results):
         rows = list(csv.reader(results))
