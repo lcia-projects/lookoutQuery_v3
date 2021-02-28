@@ -2,3 +2,4 @@
 /venv/
 /.idea/
 /blocklist-ipsets/
+/lookout.yaml
