@@ -17,6 +17,8 @@ from glob import glob
 
 from Resources import libLookout
 from Resources import libAbeebus
+from Resources import libCIFv5
+from Resources import libFireHol
 
 # Allows user to modify paremeters from commandline at runtime
 def argsParse():
@@ -80,6 +82,8 @@ if __name__ == '__main__':
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
     abeebusObj=libAbeebus.abeebus(fileList)
+    cifObj=libCIFv5.CIFv5_Query(lookout_config)
+    fireHolObj=libFireHol.fireHol_Query(lookout_config)
     uniqueIPs=abeebusObj.getIPs(fileList[0])
 
     UniqueIPs={}
@@ -87,7 +91,9 @@ if __name__ == '__main__':
     for filename in fileList:
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
-        UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+        #UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+        #UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
+        UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
     print (UniqueIPs)
 
 

@@ -1,0 +1,503 @@
+name,info
+alienvault_reputation,AlienVault.com IP reputation database
+asprox_c2,h3x.eu ASPROX Tracker - Asprox C&C Sites
+bambenek_banjori,Bambenek Consulting feed of current IPs of banjori C&Cs with 90 minute lookback
+bambenek_bebloh,Bambenek Consulting feed of current IPs of bebloh C&Cs with 90 minute lookback
+bambenek_c2,"Bambenek Consulting master feed of known, active and non-sinkholed C&Cs IP addresses"
+bambenek_cl,Bambenek Consulting feed of current IPs of cl C&Cs with 90 minute lookback
+bambenek_cryptowall,Bambenek Consulting feed of current IPs of cryptowall C&Cs with 90 minute lookback
+bambenek_dircrypt,Bambenek Consulting feed of current IPs of dircrypt C&Cs with 90 minute lookback
+bambenek_dyre,Bambenek Consulting feed of current IPs of dyre C&Cs with 90 minute lookback
+bambenek_geodo,Bambenek Consulting feed of current IPs of geodo C&Cs with 90 minute lookback
+bambenek_hesperbot,Bambenek Consulting feed of current IPs of hesperbot C&Cs with 90 minute lookback
+bambenek_matsnu,Bambenek Consulting feed of current IPs of matsnu C&Cs with 90 minute lookback
+bambenek_necurs,Bambenek Consulting feed of current IPs of necurs C&Cs with 90 minute lookback
+bambenek_p2pgoz,Bambenek Consulting feed of current IPs of p2pgoz C&Cs with 90 minute lookback
+bambenek_pushdo,Bambenek Consulting feed of current IPs of pushdo C&Cs with 90 minute lookback
+bambenek_pykspa,Bambenek Consulting feed of current IPs of pykspa C&Cs with 90 minute lookback
+bambenek_qakbot,Bambenek Consulting feed of current IPs of qakbot C&Cs with 90 minute lookback
+bambenek_ramnit,Bambenek Consulting feed of current IPs of ramnit C&Cs with 90 minute lookback
+bambenek_ranbyus,Bambenek Consulting feed of current IPs of ranbyus C&Cs with 90 minute lookback
+bambenek_simda,Bambenek Consulting feed of current IPs of simda C&Cs with 90 minute lookback
+bambenek_suppobox,Bambenek Consulting feed of current IPs of suppobox C&Cs with 90 minute lookback
+bambenek_symmi,Bambenek Consulting feed of current IPs of symmi C&Cs with 90 minute lookback
+bambenek_tinba,Bambenek Consulting feed of current IPs of tinba C&Cs with 90 minute lookback
+bambenek_volatile,Bambenek Consulting feed of current IPs of volatile C&Cs with 90 minute lookback
+bbcan177_ms1,pfBlockerNG Malicious Threats
+bbcan177_ms3,pfBlockerNG Malicious Threats
+bds_atif,Artillery Threat Intelligence Feed and Banlist Feed
+bi_any_0_1d,BadIPs.com Bad IPs in category any with score above 0 and age less than 1d
+bi_any_1_7d,BadIPs.com Bad IPs in category any with score above 1 and age less than 7d
+bi_any_2_1d,BadIPs.com Bad IPs in category any with score above 2 and age less than 1d
+bi_any_2_30d,BadIPs.com Bad IPs in category any with score above 2 and age less than 30d
+bi_any_2_7d,BadIPs.com Bad IPs in category any with score above 2 and age less than 7d
+bi_apache-404_0_1d,BadIPs.com Bad IPs in category apache-404 with score above 0 and age less than 1d
+bi_apache-modsec_0_1d,BadIPs.com Bad IPs in category apache-modsec with score above 0 and age less than 1d
+bi_apache-noscript_0_1d,BadIPs.com Bad IPs in category apache-noscript with score above 0 and age less than 1d
+bi_apache-noscript_2_30d,BadIPs.com Bad IPs in category apache-noscript with score above 2 and age less than 30d
+bi_apache-phpmyadmin_0_1d,BadIPs.com Bad IPs in category apache-phpmyadmin with score above 0 and age less than 1d
+bi_apache-scriddies_0_1d,BadIPs.com Bad IPs in category apache-scriddies with score above 0 and age less than 1d
+bi_apache_0_1d,BadIPs.com Bad IPs in category apache with score above 0 and age less than 1d
+bi_apache_1_7d,BadIPs.com Bad IPs in category apache with score above 1 and age less than 7d
+bi_apache_2_30d,BadIPs.com Bad IPs in category apache with score above 2 and age less than 30d
+bi_apacheddos_0_1d,BadIPs.com Bad IPs in category apacheddos with score above 0 and age less than 1d
+bi_assp_0_1d,BadIPs.com Bad IPs in category assp with score above 0 and age less than 1d
+bi_asterisk_0_1d,BadIPs.com Bad IPs in category asterisk with score above 0 and age less than 1d
+bi_asterisk_2_30d,BadIPs.com Bad IPs in category asterisk with score above 2 and age less than 30d
+bi_badbots_0_1d,BadIPs.com Bad IPs in category badbots with score above 0 and age less than 1d
+bi_badbots_1_7d,BadIPs.com Bad IPs in category badbots with score above 1 and age less than 7d
+bi_bruteforce_0_1d,BadIPs.com Bad IPs in category bruteforce with score above 0 and age less than 1d
+bi_bruteforce_1_7d,BadIPs.com Bad IPs in category bruteforce with score above 1 and age less than 7d
+bi_cms_0_1d,BadIPs.com Bad IPs in category cms with score above 0 and age less than 1d
+bi_cms_1_7d,BadIPs.com Bad IPs in category cms with score above 1 and age less than 7d
+bi_cms_2_30d,BadIPs.com Bad IPs in category cms with score above 2 and age less than 30d
+bi_courierauth_0_1d,BadIPs.com Bad IPs in category courierauth with score above 0 and age less than 1d
+bi_courierauth_2_30d,BadIPs.com Bad IPs in category courierauth with score above 2 and age less than 30d
+bi_default_0_1d,BadIPs.com Bad IPs in category default with score above 0 and age less than 1d
+bi_default_1_7d,BadIPs.com Bad IPs in category default with score above 1 and age less than 7d
+bi_default_2_30d,BadIPs.com Bad IPs in category default with score above 2 and age less than 30d
+bi_dns_0_1d,BadIPs.com Bad IPs in category dns with score above 0 and age less than 1d
+bi_dovecot-pop3imap_0_1d,BadIPs.com Bad IPs in category dovecot-pop3imap with score above 0 and age less than 1d
+bi_dovecot-pop3imap_2_30d,BadIPs.com Bad IPs in category dovecot-pop3imap with score above 2 and age less than 30d
+bi_dovecot_0_1d,BadIPs.com Bad IPs in category dovecot with score above 0 and age less than 1d
+bi_dovecot_1_7d,BadIPs.com Bad IPs in category dovecot with score above 1 and age less than 7d
+bi_dovecot_2_30d,BadIPs.com Bad IPs in category dovecot with score above 2 and age less than 30d
+bi_drupal_0_1d,BadIPs.com Bad IPs in category drupal with score above 0 and age less than 1d
+bi_exim_0_1d,BadIPs.com Bad IPs in category exim with score above 0 and age less than 1d
+bi_exim_1_7d,BadIPs.com Bad IPs in category exim with score above 1 and age less than 7d
+bi_ftp_0_1d,BadIPs.com Bad IPs in category ftp with score above 0 and age less than 1d
+bi_ftp_1_7d,BadIPs.com Bad IPs in category ftp with score above 1 and age less than 7d
+bi_ftp_2_30d,BadIPs.com Bad IPs in category ftp with score above 2 and age less than 30d
+bi_http_0_1d,BadIPs.com Bad IPs in category http with score above 0 and age less than 1d
+bi_http_1_7d,BadIPs.com Bad IPs in category http with score above 1 and age less than 7d
+bi_http_2_30d,BadIPs.com Bad IPs in category http with score above 2 and age less than 30d
+bi_imap_0_1d,BadIPs.com Bad IPs in category imap with score above 0 and age less than 1d
+bi_mail_0_1d,BadIPs.com Bad IPs in category mail with score above 0 and age less than 1d
+bi_mail_1_7d,BadIPs.com Bad IPs in category mail with score above 1 and age less than 7d
+bi_mail_2_30d,BadIPs.com Bad IPs in category mail with score above 2 and age less than 30d
+bi_named_0_1d,BadIPs.com Bad IPs in category named with score above 0 and age less than 1d
+bi_owncloud_0_1d,BadIPs.com Bad IPs in category owncloud with score above 0 and age less than 1d
+bi_plesk-postfix_0_1d,BadIPs.com Bad IPs in category plesk-postfix with score above 0 and age less than 1d
+bi_postfix-sasl_0_1d,BadIPs.com Bad IPs in category postfix-sasl with score above 0 and age less than 1d
+bi_postfix-sasl_1_7d,BadIPs.com Bad IPs in category postfix-sasl with score above 1 and age less than 7d
+bi_postfix-sasl_2_30d,BadIPs.com Bad IPs in category postfix-sasl with score above 2 and age less than 30d
+bi_postfix_0_1d,BadIPs.com Bad IPs in category postfix with score above 0 and age less than 1d
+bi_postfix_1_7d,BadIPs.com Bad IPs in category postfix with score above 1 and age less than 7d
+bi_postfix_2_30d,BadIPs.com Bad IPs in category postfix with score above 2 and age less than 30d
+bi_proftpd_0_1d,BadIPs.com Bad IPs in category proftpd with score above 0 and age less than 1d
+bi_proftpd_1_7d,BadIPs.com Bad IPs in category proftpd with score above 1 and age less than 7d
+bi_proftpd_2_30d,BadIPs.com Bad IPs in category proftpd with score above 2 and age less than 30d
+bi_pureftpd_0_1d,BadIPs.com Bad IPs in category pureftpd with score above 0 and age less than 1d
+bi_pureftpd_1_7d,BadIPs.com Bad IPs in category pureftpd with score above 1 and age less than 7d
+bi_pureftpd_2_30d,BadIPs.com Bad IPs in category pureftpd with score above 2 and age less than 30d
+bi_qmail-smtp_0_1d,BadIPs.com Bad IPs in category qmail-smtp with score above 0 and age less than 1d
+bi_rdp_0_1d,BadIPs.com Bad IPs in category rdp with score above 0 and age less than 1d
+bi_sasl_0_1d,BadIPs.com Bad IPs in category sasl with score above 0 and age less than 1d
+bi_sasl_1_7d,BadIPs.com Bad IPs in category sasl with score above 1 and age less than 7d
+bi_sasl_2_30d,BadIPs.com Bad IPs in category sasl with score above 2 and age less than 30d
+bi_sip_0_1d,BadIPs.com Bad IPs in category sip with score above 0 and age less than 1d
+bi_sip_1_7d,BadIPs.com Bad IPs in category sip with score above 1 and age less than 7d
+bi_sip_2_30d,BadIPs.com Bad IPs in category sip with score above 2 and age less than 30d
+bi_smtp_0_1d,BadIPs.com Bad IPs in category smtp with score above 0 and age less than 1d
+bi_spam_0_1d,BadIPs.com Bad IPs in category spam with score above 0 and age less than 1d
+bi_spam_1_7d,BadIPs.com Bad IPs in category spam with score above 1 and age less than 7d
+bi_sql-attack_0_1d,BadIPs.com Bad IPs in category sql-attack with score above 0 and age less than 1d
+bi_sql_0_1d,BadIPs.com Bad IPs in category sql with score above 0 and age less than 1d
+bi_ssh-blocklist_0_1d,BadIPs.com Bad IPs in category ssh-blocklist with score above 0 and age less than 1d
+bi_ssh-ddos_0_1d,BadIPs.com Bad IPs in category ssh-ddos with score above 0 and age less than 1d
+bi_ssh-ddos_2_30d,BadIPs.com Bad IPs in category ssh-ddos with score above 2 and age less than 30d
+bi_ssh_0_1d,BadIPs.com Bad IPs in category ssh with score above 0 and age less than 1d
+bi_ssh_1_7d,BadIPs.com Bad IPs in category ssh with score above 1 and age less than 7d
+bi_ssh_2_30d,BadIPs.com Bad IPs in category ssh with score above 2 and age less than 30d
+bi_sshd_0_1d,BadIPs.com Bad IPs in category sshd with score above 0 and age less than 1d
+bi_sshd_1_7d,BadIPs.com Bad IPs in category sshd with score above 1 and age less than 7d
+bi_sshd_2_30d,BadIPs.com Bad IPs in category sshd with score above 2 and age less than 30d
+bi_telnet_0_1d,BadIPs.com Bad IPs in category telnet with score above 0 and age less than 1d
+bi_telnet_1_7d,BadIPs.com Bad IPs in category telnet with score above 1 and age less than 7d
+bi_telnet_2_30d,BadIPs.com Bad IPs in category telnet with score above 2 and age less than 30d
+bi_unknown_0_1d,BadIPs.com Bad IPs in category unknown with score above 0 and age less than 1d
+bi_unknown_1_7d,BadIPs.com Bad IPs in category unknown with score above 1 and age less than 7d
+bi_unknown_2_30d,BadIPs.com Bad IPs in category unknown with score above 2 and age less than 30d
+bi_username-notfound_0_1d,BadIPs.com Bad IPs in category username-notfound with score above 0 and age less than 1d
+bi_voip_0_1d,BadIPs.com Bad IPs in category voip with score above 0 and age less than 1d
+bi_voip_1_7d,BadIPs.com Bad IPs in category voip with score above 1 and age less than 7d
+bi_voip_2_30d,BadIPs.com Bad IPs in category voip with score above 2 and age less than 30d
+bi_vsftpd_0_1d,BadIPs.com Bad IPs in category vsftpd with score above 0 and age less than 1d
+bi_vsftpd_2_30d,BadIPs.com Bad IPs in category vsftpd with score above 2 and age less than 30d
+bi_wordpress_0_1d,BadIPs.com Bad IPs in category wordpress with score above 0 and age less than 1d
+bi_wordpress_1_7d,BadIPs.com Bad IPs in category wordpress with score above 1 and age less than 7d
+bi_wordpress_2_30d,BadIPs.com Bad IPs in category wordpress with score above 2 and age less than 30d
+bitcoin_blockchain_info_1d,Blockchain.info Bitcoin nodes connected to Blockchain.info.
+bitcoin_blockchain_info_30d,Blockchain.info Bitcoin nodes connected to Blockchain.info.
+bitcoin_blockchain_info_7d,Blockchain.info Bitcoin nodes connected to Blockchain.info.
+bitcoin_nodes,"BitNodes Bitcoin connected nodes, globally."
+bitcoin_nodes_1d,"BitNodes Bitcoin connected nodes, globally."
+bitcoin_nodes_30d,"BitNodes Bitcoin connected nodes, globally."
+bitcoin_nodes_7d,"BitNodes Bitcoin connected nodes, globally."
+blocklist_de,Blocklist.de IPs that have been detected by fail2ban in the last 48 hours
+blocklist_de_apache,"Blocklist.de All IP addresses which have been reported within the last 48 hours as having run attacks on the service Apache, Apache-DDOS, RFI-Attacks."
+blocklist_de_bots,"Blocklist.de All IP addresses which have been reported within the last 48 hours as having run attacks on the RFI-Attacks, REG-Bots, IRC-Bots or BadBots (BadBots = it has posted a Spam-Comment on a open Forum or Wiki)."
+blocklist_de_bruteforce,"Blocklist.de All IPs which attacks Joomla, Wordpress and other Web-Logins with Brute-Force Logins."
+blocklist_de_ftp,Blocklist.de All IP addresses which have been reported within the last 48 hours for attacks on the Service FTP.
+blocklist_de_imap,"Blocklist.de All IP addresses which have been reported within the last 48 hours for attacks on the Service imap, sasl, pop3, etc."
+blocklist_de_mail,"Blocklist.de All IP addresses which have been reported within the last 48 hours as having run attacks on the service Mail, Postfix."
+blocklist_de_sip,"Blocklist.de All IP addresses that tried to login in a SIP, VOIP or Asterisk Server and are included in the IPs list from infiltrated.net"
+blocklist_de_ssh,Blocklist.de All IP addresses which have been reported within the last 48 hours as having run attacks on the service SSH.
+blocklist_de_strongips,Blocklist.de All IPs which are older then 2 month and have more then 5.000 attacks.
+blocklist_net_ua,blocklist.net.ua The BlockList project was created to become protection against negative influence of the harmful and potentially dangerous events on the Internet. First of all this service will help internet and hosting providers to protect subscribers sites from being hacked. BlockList will help to stop receiving a large amount of spam from dubious SMTP relays or from attempts of brute force passwords to servers and network equipment.
+blueliv_crimeserver_last,"blueliv.com Last 6 hours Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_last_1d,"blueliv.com Last 6 hours Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_last_2d,"blueliv.com Last 6 hours Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_last_30d,"blueliv.com Last 6 hours Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_last_7d,"blueliv.com Last 6 hours Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_online,"blueliv.com Online Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+blueliv_crimeserver_recent,"blueliv.com Recent Cybercrime IPs, in all categories: BACKDOOR, C_AND_C, EXPLOIT_KIT, MALWARE and PHISHING (to download the source data you need an API key from blueliv.com)"
+bm_tor,torstatus.blutmagie.de list of all TOR network servers
+bogons,"Team-Cymru.org private and reserved addresses defined by RFC 1918, RFC 5735, and RFC 6598 and netblocks that have not been allocated to a regional internet registry"
+botscout,"BotScout helps prevent automated web scripts, known as bots, from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. They do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference. They also provide a simple yet powerful API that you can use to test forms when they're submitted on your site. This list is composed of the most recently-caught bots."
+botscout_1d,"BotScout helps prevent automated web scripts, known as bots, from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. They do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference. They also provide a simple yet powerful API that you can use to test forms when they're submitted on your site. This list is composed of the most recently-caught bots."
+botscout_30d,"BotScout helps prevent automated web scripts, known as bots, from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. They do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference. They also provide a simple yet powerful API that you can use to test forms when they're submitted on your site. This list is composed of the most recently-caught bots."
+botscout_7d,"BotScout helps prevent automated web scripts, known as bots, from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. They do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference. They also provide a simple yet powerful API that you can use to test forms when they're submitted on your site. This list is composed of the most recently-caught bots."
+botvrij_dst,"botvrij.eu Indicators of Compromise (IOCS) about malicious destination IPs, gathered via open source information feeds (blog pages and PDF documents) and then consolidated into different datasets. To ensure the quality of the data all entries older than approx. 6 months are removed."
+botvrij_src,"botvrij.eu Indicators of Compromise (IOCS) about malicious source IPs, gathered via open source information feeds (blog pages and PDF documents) and then consolidated into different datasets. To ensure the quality of the data all entries older than approx. 6 months are removed."
+bruteforceblocker,danger.rulez.sk bruteforceblocker (fail2ban alternative for SSH on OpenBSD). This is an automatically generated list from users reporting failed authentication attempts. An IP seems to be included if 3 or more users report it. Its retention pocily seems 30 days.
+ciarmy,CIArmy.com IPs with poor Rogue Packet score that have not yet been identified as malicious by the community
+cidr_report_bogons,"Unallocated (Free) Address Space, generated on a daily basis using the IANA registry files, the Regional Internet Registry stats files and the Regional Internet Registry whois data."
+cleanmx_phishing,Clean-MX.de IPs sending phishing messages
+cleanmx_viruses,Clean-MX.de IPs with viruses
+cleantalk,CleanTalk Today's HTTP Spammers (includes: cleantalk_new cleantalk_updated)
+cleantalk_1d,CleanTalk Today's HTTP Spammers (includes: cleantalk_new_1d cleantalk_updated_1d)
+cleantalk_30d,CleanTalk Today's HTTP Spammers (includes: cleantalk_new_30d cleantalk_updated_30d)
+cleantalk_7d,CleanTalk Today's HTTP Spammers (includes: cleantalk_new_7d cleantalk_updated_7d)
+cleantalk_new,CleanTalk Recent HTTP Spammers
+cleantalk_new_1d,CleanTalk Recent HTTP Spammers
+cleantalk_new_30d,CleanTalk Recent HTTP Spammers
+cleantalk_new_7d,CleanTalk Recent HTTP Spammers
+cleantalk_top20,CleanTalk Top 20 HTTP Spammers
+cleantalk_updated,CleanTalk Recurring HTTP Spammers
+cleantalk_updated_1d,CleanTalk Recurring HTTP Spammers
+cleantalk_updated_30d,CleanTalk Recurring HTTP Spammers
+cleantalk_updated_7d,CleanTalk Recurring HTTP Spammers
+coinbl_hosts,"CoinBlockerLists Simple lists that can help prevent cryptomining in the browser or other applications. This list contains all domains - A list for administrators to prevent mining in networks. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+coinbl_hosts_browser,"CoinBlockerLists Simple lists that can help prevent cryptomining in the browser or other applications. A hosts list to prevent browser mining only. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+coinbl_hosts_optional,"CoinBlockerLists Simple lists that can help prevent cryptomining in the browser or other applications. This list contains additional domains, for administrators to prevent mining in networks. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+coinbl_ips,"CoinBlockerLists Simple lists that can help prevent cryptomining in the browser or other applications. This list contains all IPs - An additional list for administrators to prevent mining in networks. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+cruzit_web_attacks,CruzIt.com IPs of compromised machines scanning for vulnerabilities and DDOS attacks
+cta_cryptowall,"Cyber Threat Alliance CryptoWall is one of the most lucrative and broad-reaching ransomware campaigns affecting Internet users today. Sharing intelligence and analysis resources, the CTA profiled the latest version of CryptoWall, which impacted hundreds of thousands of users, resulting in over US $325 million in damages worldwide."
+cybercrime,CyberCrime A project tracking Command and Control.
+darklist_de,darklist.de ssh fail2ban reporting
+datacenters,"Nick Galbreath This is a list of IPv4 address that correspond to datacenters, co-location centers, shared and virtual webhosting providers. In other words, ip addresses that end web consumers should not be using."
+dataplane_dnsrd,DataPlane.org IP addresses that have been identified as sending recursive DNS queries to a remote host. This report lists addresses that may be cataloging open DNS resolvers or evaluating cache entries.
+dataplane_dnsrdany,DataPlane.org IP addresses that have been identified as sending recursive DNS IN ANY queries to a remote host. This report lists addresses that may be cataloging open DNS resolvers for the purpose of later using them to facilitate DNS amplification and reflection attacks.
+dataplane_dnsversion,DataPlane.org IP addresses that have been identified as sending DNS CH TXT VERSION.BIND queries to a remote host. This report lists addresses that may be cataloging DNS software.
+dataplane_sipinvitation,DataPlane.org IP addresses that have been seen initiating a SIP INVITE operation to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be SIP client cataloging or conducting various forms of telephony abuse.
+dataplane_sipquery,DataPlane.org IP addresses that has been seen initiating a SIP OPTIONS query to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be SIP server cataloging or conducting various forms of telephony abuse.
+dataplane_sipregistration,DataPlane.org IP addresses that have been seen initiating a SIP REGISTER operation to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be SIP client cataloging or conducting various forms of telephony abuse.
+dataplane_sshclient,DataPlane.org IP addresses that has been seen initiating an SSH connection to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be SSH server cataloging or conducting authentication attack attempts.
+dataplane_sshpwauth,DataPlane.org IP addresses that has been seen attempting to remotely login to a host using SSH password authentication. This report lists hosts that are highly suspicious and are likely conducting malicious SSH password authentication attacks.
+dataplane_vncrfb,DataPlane.org IP addresses that have been seen initiating a VNC remote frame buffer (RFB) session to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be VNC server cataloging or conducting various forms of remote access abuse.
+dm_tor,dan.me.uk dynamic list of TOR nodes
+dronebl_anonymizers,"DroneBL.org List of open proxies. It includes IPs which DroneBL categorizes as SOCKS proxies (8), HTTP proxies (9), web page proxies (11), WinGate proxies (14), proxy chains (10)."
+dronebl_auto_botnets,DroneBL.org IPs of automatically detected botnets. It includes IPs for which DroneBL responds with 17.
+dronebl_autorooting_worms,DroneBL.org IPs of autorooting worms. It includes IPs for which DroneBL responds with 16. These are usually SSH bruteforce attacks.
+dronebl_compromised,DroneBL.org IPs of compromised routers / gateways. It includes IPs for which DroneBL responds with 15 (BOPM detected).
+dronebl_ddos_drones,DroneBL.org IPs of DDoS drones. It includes IPs for which DroneBL responds with 7.
+dronebl_dns_mx_on_irc,DroneBL.org List of IPs of DNS / MX hostname detected on IRC. It includes IPs for which DroneBL responds with 18.
+dronebl_irc_drones,DroneBL.org List of IRC spam drones (litmus/sdbot/fyle). It includes IPs for which DroneBL responds with 3.
+dronebl_unknown,DroneBL.org List of IPs of uncategorized threats. It includes IPs for which DroneBL responds with 255.
+dronebl_worms_bots,DroneBL.org IPs of unknown worms or spambots. It includes IPs for which DroneBL responds with 6
+dshield,DShield.org top 20 attacking class C (/24) subnets over the last three days
+dshield_1d,DShield.org top 20 attacking class C (/24) subnets over the last three days
+dshield_30d,DShield.org top 20 attacking class C (/24) subnets over the last three days
+dshield_7d,DShield.org top 20 attacking class C (/24) subnets over the last three days
+dshield_top_1000,DShield.org top 1000 attacking hosts in the last 30 days
+dyndns_ponmocup,"DynDNS.org Ponmocup. The malware powering the botnet has been around since 2006 and it’s known under various names, including Ponmocup, Vundo, Virtumonde, Milicenso and Swisyn. It has been used for ad fraud, data theft and downloading additional threats to infected systems. Ponmocup is one of the largest currently active and, with nine consecutive years, also one of the longest running, but it is rarely noticed as the operators take care to keep it operating under the radar."
+esentire_14072015_com,Malicious Botnet Serving Various Malware Families
+esentire_14072015q_com,Malicious Botnet Serving Various Malware Families
+esentire_22072014a_com,Malicious Botnet Serving Various Malware Families
+esentire_22072014b_com,Malicious Botnet Serving Various Malware Families
+esentire_22072014c_com,Malicious Botnet Serving Various Malware Families
+esentire_atomictrivia_ru,Andromeda/Gamarue Checkin
+esentire_auth_update_ru,Malicious Botnet Serving Various Malware Families
+esentire_burmundisoul_ru,Ursnif Variant CnC
+esentire_crazyerror_su,Malicious Botnet Serving Various Malware Families
+esentire_dagestanskiiviskis_ru,Ursnif Variant CnC
+esentire_differentia_ru,Malicious Botnet Serving Various Malware Families
+esentire_disorderstatus_ru,Malicious Botnet Serving Various Malware Families
+esentire_dorttlokolrt_com,Malicious Botnet Serving Various Malware Families
+esentire_downs1_ru,Malicious Botnet Serving Various Malware Families
+esentire_ebankoalalusys_ru,Ursnif Variant CnC
+esentire_emptyarray_ru,Malicious Botnet Serving Various Malware Families
+esentire_fioartd_com,Andromeda/Gamarue Checkin
+esentire_getarohirodrons_com,Andromeda/Gamarue Checkin
+esentire_hasanhashsde_ru,Ursnif Variant CnC
+esentire_inleet_ru,Ursnif Variant CnC
+esentire_islamislamdi_ru,Ursnif Variant CnC
+esentire_krnqlwlplttc_com,Malicious Botnet Serving Various Malware Families
+esentire_maddox1_ru,Malicious Botnet Serving Various Malware Families
+esentire_manning1_ru,Malicious Botnet Serving Various Malware Families
+esentire_misteryherson_ru,Ursnif Variant CnC
+esentire_mysebstarion_ru,Ursnif Variant CnC
+esentire_smartfoodsglutenfree_kz,Malicious Botnet Serving Various Malware Families
+esentire_venerologvasan93_ru,Ursnif Variant CnC
+esentire_volaya_ru,Win32/PSW.Papras.CK CnC
+et_block,"EmergingThreats.net default blacklist (at the time of writing includes spamhaus DROP, dshield and abuse.ch trackers, which are available separately too - prefer to use the direct ipsets instead of this, they seem to lag a bit in updates)"
+et_botcc,"EmergingThreats.net Command and Control IPs These IPs are updates every 24 hours and should be considered VERY highly reliable indications that a host is communicating with a known and active Bot or Malware command and control server - (although they say this includes abuse.ch trackers, it does not - check its overlaps)"
+et_compromised,EmergingThreats.net compromised hosts
+et_dshield,EmergingThreats.net dshield blocklist
+et_spamhaus,EmergingThreats.net spamhaus blocklist
+et_tor,EmergingThreats.net TOR list of TOR network IPs
+feodo,Abuse.ch Feodo tracker trojan includes IPs which are being used by Feodo (also known as Cridex or Bugat) which commits ebanking fraud
+feodo_badips,"Abuse.ch Feodo tracker BadIPs The Feodo Tracker Feodo BadIP Blocklist only contains IP addresses (IPv4) used as C&C communication channel by the Feodo Trojan version B. These IP addresses are usually servers rented by cybercriminals directly and used for the exclusive purpose of hosting a Feodo C&C server. Hence you should expect no legit traffic to those IP addresses. The site highly recommends you to block/drop any traffic towards any Feodo C&C using the Feodo BadIP Blocklist. Please consider that this blocklist only contains IP addresses used by version B of the Feodo Trojan. C&C communication channels used by version A, version C and version D are not covered by this blocklist."
+firehol_abusers_1d,An ipset made from blocklists that track abusers in the last 24 hours. (includes: botscout_1d cleantalk_new_1d cleantalk_updated_1d php_commenters_1d php_dictionary_1d php_harvesters_1d php_spammers_1d stopforumspam_1d)
+firehol_abusers_30d,An ipset made from blocklists that track abusers in the last 30 days. (includes: cleantalk_new_30d cleantalk_updated_30d php_commenters_30d php_dictionary_30d php_harvesters_30d php_spammers_30d stopforumspam sblam)
+firehol_anonymous,An ipset that includes all the anonymizing IPs of the world. (includes: anonymous bm_tor dm_tor firehol_proxies tor_exits)
+firehol_level1,"A firewall blacklist composed from IP lists, providing maximum protection with minimum false positives. Suitable for basic protection on all internet facing servers, routers and firewalls. (includes: bambenek_c2 dshield feodo fullbogons spamhaus_drop spamhaus_edrop sslbl zeus_badips ransomware_rw)"
+firehol_level2,"An ipset made from blocklists that track attacks, during about the last 48 hours. (includes: blocklist_de dshield_1d greensnow)"
+firehol_level3,"An ipset made from blocklists that track attacks, spyware, viruses. It includes IPs than have been reported or detected in the last 30 days. (includes: bruteforceblocker ciarmy dshield_30d dshield_top_1000 malc0de maxmind_proxy_fraud myip shunlist snort_ipfilter sslbl_aggressive talosintel_ipfilter zeus vxvault)"
+firehol_level4,"An ipset made from blocklists that track attacks, but may include a large number of false positives. (includes: blocklist_net_ua botscout_30d cruzit_web_attacks cybercrime haley_ssh iblocklist_hijacked iblocklist_spyware iblocklist_webexploit ipblacklistcloud_top iw_wormlist malwaredomainlist)"
+firehol_proxies,An ipset made from all sources that track open proxies. It includes IPs reported or detected in the last 30 days. (includes: iblocklist_proxies maxmind_proxy_fraud ip2proxy_px1lite proxylists_30d proxyrss_30d proxz_30d ri_connect_proxies_30d ri_web_proxies_30d socks_proxy_30d sslproxies_30d xroxy_30d)
+firehol_webclient,An IP blacklist made from blocklists that track IPs that a web client should never talk to. This list is to be used on top of firehol_level1. (includes: ransomware_online sslbl_aggressive cybercrime dyndns_ponmocup maxmind_proxy_fraud)
+firehol_webserver,"A web server IP blacklist made from blocklists that track IPs that should never be used by your web users. (This list includes IPs that are servers hosting malware, bots, etc or users having a long criminal history. This list is to be used on top of firehol_level1, firehol_level2, firehol_level3 and possibly firehol_proxies or firehol_anonymous). (includes: maxmind_proxy_fraud myip pushing_inertia_blocklist stopforumspam_toxic)"
+fullbogons,"Team-Cymru.org IP space that has been allocated to an RIR, but not assigned by that RIR to an actual ISP or other end-user"
+geolite2_asn,MaxMind GeoLite2 ASN
+geolite2_country,"MaxMind GeoLite2 databases are free IP geolocation databases comparable to, but less accurate than, MaxMind’s GeoIP2 databases. They include IPs per country, IPs per continent, IPs used by anonymous services (VPNs, Proxies, etc) and Satellite Providers."
+gofferje_sip,"Stefan Gofferje A personal blacklist of networks and IPs of SIP attackers. To end up here, the IP or network must have been the origin of considerable and repeated attacks on my PBX and additionally, the ISP didn't react to any complaint. Note from the author: I don't give any guarantees of accuracy, completeness or even usability! USE AT YOUR OWN RISK! Also note that I block complete countries, namely China, Korea and Palestine with blocklists from ipdeny.com, so some attackers will never even get the chance to get noticed by me to be put on this blacklist. I also don't accept any liabilities related to this blocklist. If you're an ISP and don't like your IPs being listed here, too bad! You should have done something about your customers' behavior and reacted to my complaints. This blocklist is nothing but an expression of my personal opinion and exercising my right of free speech."
+gpf_comics,"The GPF DNS Block List is a list of IP addresses on the Internet that have attacked the GPF Comics family of Web sites. IPs on this block list have been banned from accessing all of our servers because they were caught in the act of spamming, attempting to exploit our scripts, scanning for vulnerabilities, or consuming resources to the detriment of our human visitors."
+graphiclineweb,"GraphiclineWeb The IP’s, Hosts and Domains listed in this table are banned universally from accessing websites controlled by the maintainer. Some form of bad activity has been seen from the addresses listed. Bad activity includes: unwanted spiders, rule breakers, comment spammers, trackback spammers, spambots, hacker bots, registration bots and other scripting attackers, harvesters, nuisance spiders, spy bots and organizations spying on websites for commercial reasons."
+greensnow,"GreenSnow is a team harvesting a large number of IPs from different computers located around the world. GreenSnow is comparable with SpamHaus.org for attacks of any kind except for spam. Their list is updated automatically and you can withdraw at any time your IP address if it has been listed. Attacks / bruteforce that are monitored are: Scan Port, FTP, POP3, mod_security, IMAP, SMTP, SSH, cPanel, etc."
+haley_ssh,Charles Haley IPs launching SSH dictionary attacks.
+hphosts_ats,"hpHosts ad/tracking servers listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_emd,"hpHosts malware sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_exp,"hpHosts exploit sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_fsa,"hpHosts fraud sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_grm,"hpHosts sites involved in spam (that do not otherwise meet any other classification criteria) listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_hfs,"hpHosts sites spamming the hpHosts forums (and not meeting any other classification criteria) listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_hjk,"hpHosts hijack sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_mmt,"hpHosts sites involved in misleading marketing (e.g. fake Flash update adverts) listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_pha,"hpHosts illegal pharmacy sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_psh,"hpHosts phishing sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+hphosts_wrz,"hpHosts warez/piracy sites listed in the hpHosts database. The maintainer's file contains hostnames, which have been DNS resolved to IP addresses."
+iblocklist_abuse_palevo,palevotracker.abuse.ch IP blocklist.
+iblocklist_abuse_spyeye,spyeyetracker.abuse.ch IP blocklist.
+iblocklist_abuse_zeus,zeustracker.abuse.ch IP blocklist that contains IP addresses which are currently beeing tracked on the abuse.ch ZeuS Tracker.
+iblocklist_ads,Advertising trackers and a short list of bad/intrusive porn sites.
+iblocklist_badpeers,IPs that have been reported for bad deeds in p2p.
+iblocklist_bogons,Unallocated address space.
+iblocklist_ciarmy_malicious,"ciarmy.com IP blocklist. Based on information from a network of Sentinel devices deployed around the world, they compile a list of known bad IP addresses. Sentinel devices are uniquely positioned to pick up traffic from bad guys without requiring any type of signature-based or rate-based identification. If an IP is identified in this way by a significant number of Sentinels, the IP is malicious and should be blocked."
+iblocklist_cidr_report_bogons,cidr-report.org IP list of Unallocated address space.
+iblocklist_cruzit_web_attacks,CruzIT IP list with individual IP addresses of compromised machines scanning for vulnerabilities and DDOS attacks.
+iblocklist_dshield,known Hackers and such people.
+iblocklist_edu,IPs used by Educational Institutions.
+iblocklist_exclusions,Exclusions.
+iblocklist_fornonlancomputers,IP blocklist for non-LAN computers.
+iblocklist_forumspam,Forum spam.
+iblocklist_hijacked,Hijacked IP-Blocks. Contains hijacked IP-Blocks and known IP-Blocks that are used to deliver Spam. This list is a combination of lists with hijacked IP-Blocks. Hijacked IP space are IP blocks that are being used without permission by organizations that have no relation to original organization (or its legal successor) that received the IP block. In essence it's stealing of somebody else's IP resources.
+iblocklist_iana_multicast,IANA Multicast IPs.
+iblocklist_iana_private,IANA Private IPs.
+iblocklist_iana_reserved,IANA Reserved IPs.
+iblocklist_isp_aol,AOL IPs.
+iblocklist_isp_att,AT&T IPs.
+iblocklist_isp_cablevision,Cablevision IPs.
+iblocklist_isp_charter,Charter IPs.
+iblocklist_isp_comcast,Comcast IPs.
+iblocklist_isp_embarq,Embarq IPs.
+iblocklist_isp_qwest,Qwest IPs.
+iblocklist_isp_sprint,Sprint IPs.
+iblocklist_isp_suddenlink,Suddenlink IPs.
+iblocklist_isp_twc,Time Warner Cable IPs.
+iblocklist_isp_verizon,Verizon IPs.
+iblocklist_level1,"Level 1 (for use in p2p): Companies or organizations who are clearly involved with trying to stop filesharing (e.g. Baytsp, MediaDefender, Mediasentry). Companies which anti-p2p activity has been seen from. Companies that produce or have a strong financial interest in copyrighted material (e.g. music, movie, software industries a.o.). Government ranges or companies that have a strong financial interest in doing work for governments. Legal industry ranges. IPs or ranges of ISPs from which anti-p2p activity has been observed. Basically this list will block all kinds of internet connections that most people would rather not have during their internet travels."
+iblocklist_level2,Level 2 (for use in p2p). General corporate ranges. Ranges used by labs or researchers. Proxies.
+iblocklist_level3,"Level 3 (for use in p2p). Many portal-type websites. ISP ranges that may be dodgy for some reason. Ranges that belong to an individual, but which have not been determined to be used by a particular company. Ranges for things that are unusual in some way. The L3 list is aka the paranoid list."
+iblocklist_malc0de,malc0de.com IP blocklist. Addresses that have been identified distributing malware during the past 30 days.
+iblocklist_onion_router,The Onion Router IP addresses.
+iblocklist_org_activision,Activision IPs.
+iblocklist_org_apple,Apple IPs.
+iblocklist_org_blizzard,Blizzard IPs.
+iblocklist_org_crowd_control,Crowd Control Productions IPs.
+iblocklist_org_electronic_arts,Electronic Arts IPs.
+iblocklist_org_joost,Joost IPs.
+iblocklist_org_linden_lab,Linden Lab IPs.
+iblocklist_org_logmein,LogMeIn IPs.
+iblocklist_org_microsoft,Microsoft IP ranges.
+iblocklist_org_ncsoft,NCsoft IPs.
+iblocklist_org_nintendo,Nintendo IPs.
+iblocklist_org_pandora,Pandora IPs.
+iblocklist_org_pirate_bay,The Pirate Bay IPs.
+iblocklist_org_punkbuster,Punkbuster IPs.
+iblocklist_org_riot_games,Riot Games IPs.
+iblocklist_org_sony_online,Sony Online Entertainment IPs.
+iblocklist_org_square_enix,Square Enix IPs.
+iblocklist_org_steam,Steam IPs.
+iblocklist_org_ubisoft,Ubisoft IPs.
+iblocklist_org_xfire,XFire IPs.
+iblocklist_pedophiles,IP ranges of people who we have found to be sharing child pornography in the p2p community.
+iblocklist_proxies,Open Proxies IPs list (without TOR)
+iblocklist_rangetest,Suspicious IPs that are under investigation.
+iblocklist_spamhaus_drop,Spamhaus.org DROP (Don't Route Or Peer) list.
+iblocklist_spider,IP list intended to be used by webmasters to block hostile spiders from their web sites.
+iblocklist_spyware,"Known malicious SPYWARE and ADWARE IP Address ranges. It is compiled from various sources, including other available spyware blacklists, HOSTS files, from research found at many of the top anti-spyware forums, logs of spyware victims, etc."
+iblocklist_webexploit,"Web server hack and exploit attempts. IP addresses related to current web server hack and exploit attempts that have been logged or can be found in and cross referenced with other related IP databases. Malicious and other non search engine bots will also be listed here, along with anything found that can have a negative impact on a website or webserver such as proxies being used for negative SEO hijacks, unauthorised site mirroring, harvesting, scraping, snooping and data mining / spy bot / security & copyright enforcement companies that target and continuosly scan webservers."
+iblocklist_yoyo_adservers,pgl.yoyo.org ad servers
+ip2location_country,IP2Location.com geolocation database
+ip2location_country_eh,Western Sahara (EH) -- IP2Location.com
+ip2location_country_sh,Saint Helena (SH) -- IP2Location.com
+ip2proxy_px1lite,IP2Location.com IP2Proxy LITE IP-COUNTRY Database contains IP addresses which are used as public proxies. The LITE edition is a free version of database that is limited to public proxies IP address.
+ipblacklistcloud_recent,"IP Blacklist Cloud These are the most recent IP addresses that have been blacklisted by websites. IP Blacklist Cloud plugin protects your WordPress based website from spam comments, gives details about login attacks which you don't even know are happening without this plugin!"
+ipblacklistcloud_recent_1d,"IP Blacklist Cloud These are the most recent IP addresses that have been blacklisted by websites. IP Blacklist Cloud plugin protects your WordPress based website from spam comments, gives details about login attacks which you don't even know are happening without this plugin!"
+ipblacklistcloud_recent_30d,"IP Blacklist Cloud These are the most recent IP addresses that have been blacklisted by websites. IP Blacklist Cloud plugin protects your WordPress based website from spam comments, gives details about login attacks which you don't even know are happening without this plugin!"
+ipblacklistcloud_recent_7d,"IP Blacklist Cloud These are the most recent IP addresses that have been blacklisted by websites. IP Blacklist Cloud plugin protects your WordPress based website from spam comments, gives details about login attacks which you don't even know are happening without this plugin!"
+ipblacklistcloud_top,"IP Blacklist Cloud These are the top IP addresses that have been blacklisted by many websites. IP Blacklist Cloud plugin protects your WordPress based website from spam comments, gives details about login attacks which you don't even know are happening without this plugin!"
+ipdeny_country,IPDeny.com geolocation database
+iw_spamlist,"ImproWare Antispam IPs sending spam, in the last 3 days"
+iw_wormlist,"ImproWare Antispam IPs sending emails with viruses or worms, in the last 3 days"
+lashback_ubl,"The LashBack UBL The Unsubscribe Blacklist (UBL) is a real-time blacklist of IP addresses which are sending email to names harvested from suppression files (this is a big list, more than 500.000 IPs)"
+malc0de,Malc0de.com malicious IPs of the last 30 days
+malwaredomainlist,malwaredomainlist.com list of malware active ip addresses
+maxmind_proxy_fraud,MaxMind.com sample list of high-risk IP addresses.
+myip,"myip.ms IPs identified as web bots in the last 10 days, using several sites that require human action"
+nixspam,"NiX Spam IP addresses that sent spam in the last hour - automatically generated entries without distinguishing open proxies from relays, dialup gateways, and so on. All IPs are removed after 12 hours if there is no spam from there."
+normshield_all_attack,NormShield.com IPs in category attack with severity all
+normshield_all_bruteforce,NormShield.com IPs in category bruteforce with severity all
+normshield_all_ddosbot,NormShield.com IPs in category ddosbot with severity all
+normshield_all_dnsscan,NormShield.com IPs in category dnsscan with severity all
+normshield_all_spam,NormShield.com IPs in category spam with severity all
+normshield_all_suspicious,NormShield.com IPs in category suspicious with severity all
+normshield_all_wannacry,NormShield.com IPs in category wannacry with severity all
+normshield_all_webscan,NormShield.com IPs in category webscan with severity all
+normshield_all_wormscan,NormShield.com IPs in category wormscan with severity all
+normshield_high_attack,NormShield.com IPs in category attack with severity high
+normshield_high_bruteforce,NormShield.com IPs in category bruteforce with severity high
+normshield_high_ddosbot,NormShield.com IPs in category ddosbot with severity high
+normshield_high_dnsscan,NormShield.com IPs in category dnsscan with severity high
+normshield_high_spam,NormShield.com IPs in category spam with severity high
+normshield_high_suspicious,NormShield.com IPs in category suspicious with severity high
+normshield_high_wannacry,NormShield.com IPs in category wannacry with severity high
+normshield_high_webscan,NormShield.com IPs in category webscan with severity high
+normshield_high_wormscan,NormShield.com IPs in category wormscan with severity high
+nt_malware_dns,"No Think Malware DNS (the original list includes hostnames and domains, which are ignored)"
+nt_malware_http,No Think Malware HTTP
+nt_malware_irc,No Think Malware IRC
+nt_ssh_7d,NoThink Last 7 days SSH attacks
+nullsecure,"nullsecure.org This is a free threat feed provided for use in any acceptable manner. This feed was aggregated using the Tango Honeypot Intelligence Splunk App by Brian Warehime, a Senior Security Analyst at Defense Point Security."
+packetmail,"PacketMail.net IP addresses that have been detected performing TCP SYN to 206.82.85.196/30 to a non-listening service or daemon. No assertion is made, nor implied, that any of the below listed IP addresses are accurate, malicious, hostile, or engaged in nefarious acts. Use this list at your own risk."
+packetmail_emerging_ips,"PacketMail.net IP addresses that have been detected as potentially of interest based on the number of unique users of the packetmail IP Reputation system. No assertion is made, nor implied, that any of the below listed IP addresses are accurate, malicious, hostile, or engaged in nefarious acts. Use this list at your own risk."
+packetmail_mail,"PacketMail.net IP addresses that have been detected performing behavior not in compliance with the requirements this system enforces for email acceptance. No assertion is made, nor implied, that any of the below listed IP addresses are accurate, malicious, hostile, or engaged in nefarious acts. Use this list at your own risk."
+packetmail_ramnode,"PacketMail.net IP addresses that have been detected performing TCP SYN to 81.4.103.251 to a non-listening service or daemon. No assertion is made, nor implied, that any of the below listed IP addresses are accurate, malicious, hostile, or engaged in nefarious acts. Use this list at your own risk."
+php_bad,projecthoneypot.org bad web hosts (this list is composed using an RSS feed)
+php_commenters,projecthoneypot.org comment spammers (this list is composed using an RSS feed)
+php_commenters_1d,projecthoneypot.org comment spammers (this list is composed using an RSS feed)
+php_commenters_30d,projecthoneypot.org comment spammers (this list is composed using an RSS feed)
+php_commenters_7d,projecthoneypot.org comment spammers (this list is composed using an RSS feed)
+php_dictionary,projecthoneypot.org directory attackers (this list is composed using an RSS feed)
+php_dictionary_1d,projecthoneypot.org directory attackers (this list is composed using an RSS feed)
+php_dictionary_30d,projecthoneypot.org directory attackers (this list is composed using an RSS feed)
+php_dictionary_7d,projecthoneypot.org directory attackers (this list is composed using an RSS feed)
+php_harvesters,projecthoneypot.org harvesters (IPs that surf the internet looking for email addresses) (this list is composed using an RSS feed)
+php_harvesters_1d,projecthoneypot.org harvesters (IPs that surf the internet looking for email addresses) (this list is composed using an RSS feed)
+php_harvesters_30d,projecthoneypot.org harvesters (IPs that surf the internet looking for email addresses) (this list is composed using an RSS feed)
+php_harvesters_7d,projecthoneypot.org harvesters (IPs that surf the internet looking for email addresses) (this list is composed using an RSS feed)
+php_spammers,projecthoneypot.org spam servers (IPs used by spammers to send messages) (this list is composed using an RSS feed)
+php_spammers_1d,projecthoneypot.org spam servers (IPs used by spammers to send messages) (this list is composed using an RSS feed)
+php_spammers_30d,projecthoneypot.org spam servers (IPs used by spammers to send messages) (this list is composed using an RSS feed)
+php_spammers_7d,projecthoneypot.org spam servers (IPs used by spammers to send messages) (this list is composed using an RSS feed)
+proxylists,proxylists.net open proxies (this list is composed using an RSS feed)
+proxylists_1d,proxylists.net open proxies (this list is composed using an RSS feed)
+proxylists_30d,proxylists.net open proxies (this list is composed using an RSS feed)
+proxylists_7d,proxylists.net open proxies (this list is composed using an RSS feed)
+proxyrss,proxyrss.com open proxies syndicated from multiple sources.
+proxyrss_1d,proxyrss.com open proxies syndicated from multiple sources.
+proxyrss_30d,proxyrss.com open proxies syndicated from multiple sources.
+proxyrss_7d,proxyrss.com open proxies syndicated from multiple sources.
+proxyspy_1d,ProxySpy open proxies (updated hourly)
+proxyspy_30d,ProxySpy open proxies (updated hourly)
+proxyspy_7d,ProxySpy open proxies (updated hourly)
+proxz,proxz.com open proxies (this list is composed using an RSS feed)
+proxz_1d,proxz.com open proxies (this list is composed using an RSS feed)
+proxz_30d,proxz.com open proxies (this list is composed using an RSS feed)
+proxz_7d,proxz.com open proxies (this list is composed using an RSS feed)
+pushing_inertia_blocklist,"Pushing Inertia IPs of hosting providers that are known to host various bots, spiders, scrapers, etc. to block access from these providers to web servers."
+ransomware_cryptowall_ps,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is CW_PS_IPBL: CryptoWall Ransomware Payment Sites IP blocklist."
+ransomware_feed,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. The IPs in this list have been extracted from the tracker data feed."
+ransomware_locky_c2,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is LY_C2_IPBL: Locky Ransomware C2 URL blocklist."
+ransomware_locky_ps,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is LY_PS_IPBL: Locky Ransomware Payment Sites IP blocklist."
+ransomware_online,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. The IPs in this list have been extracted from the tracker data feed, filtering only online IPs."
+ransomware_rw,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list includes TC_PS_IPBL, LY_C2_IPBL, TL_C2_IPBL, TL_PS_IPBL and it is the recommended blocklist. It might not catch everything, but the false positive rate should be low. However, false positives are possible, especially with regards to RW_IPBL. IP addresses associated with Ransomware Payment Sites (*_PS_IPBL) or Locky botnet C&Cs (LY_C2_IPBL) stay listed on RW_IPBL for a time of 30 days after the last appearance. This means that an IP address stays listed on RW_IPBL even after the threat has been eliminated (e.g. the VPS / server has been suspended by the hosting provider) for another 30 days."
+ransomware_teslacrypt_ps,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is TC_PS_IPBL: TeslaCrypt Ransomware Payment Sites IP blocklist."
+ransomware_torrentlocker_c2,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is TL_C2_IPBL: TorrentLocker Ransomware C2 IP blocklist."
+ransomware_torrentlocker_ps,"Abuse.ch Ransomware Tracker Ransomware Tracker tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&C servers, distribution sites and payment sites. By using data provided by Ransomware Tracker, hosting- and internet service provider (ISPs), as well as national CERTs/CSIRTs, law enforcement agencies (LEA) and security researchers can receive an overview on infrastructure used by Ransomware and whether these are actively being used by miscreants to commit fraud. This list is TL_PS_IPBL: TorrentLocker Ransomware Payment Sites IP blocklist."
+ri_connect_proxies,rosinstrument.com open CONNECT proxies (this list is composed using an RSS feed)
+ri_connect_proxies_1d,rosinstrument.com open CONNECT proxies (this list is composed using an RSS feed)
+ri_connect_proxies_30d,rosinstrument.com open CONNECT proxies (this list is composed using an RSS feed)
+ri_connect_proxies_7d,rosinstrument.com open CONNECT proxies (this list is composed using an RSS feed)
+ri_web_proxies,rosinstrument.com open HTTP proxies (this list is composed using an RSS feed)
+ri_web_proxies_1d,rosinstrument.com open HTTP proxies (this list is composed using an RSS feed)
+ri_web_proxies_30d,rosinstrument.com open HTTP proxies (this list is composed using an RSS feed)
+ri_web_proxies_7d,rosinstrument.com open HTTP proxies (this list is composed using an RSS feed)
+sblam,"sblam.com IPs used by web form spammers, during the last month"
+shunlist,AutoShun.org IPs identified as hostile by correlating logs from distributed snort installations running the autoshun plugin
+snort_ipfilter,"labs.snort.org supplied IP blacklist (this list seems to be updated frequently, but we found no information about it)"
+socks_proxy,socks-proxy.net open SOCKS proxies
+socks_proxy_1d,socks-proxy.net open SOCKS proxies
+socks_proxy_30d,socks-proxy.net open SOCKS proxies
+socks_proxy_7d,socks-proxy.net open SOCKS proxies
+sorbs_anonymizers,Sorbs.net List of open HTTP and SOCKS proxies.
+sorbs_block,Sorbs.net List of hosts demanding that they never be tested by SORBS.
+sorbs_dul,Sorbs.net Dynamic IP Addresses.
+sorbs_escalations,"Sorbs.net Netblocks of spam supporting service providers, including those who provide websites, DNS or drop boxes for a spammer. Spam supporters are added on a 'third strike and you are out' basis, where the third spam will cause the supporter to be added to the list."
+sorbs_new_spam,Sorbs.net List of hosts that have been noted as sending spam/UCE/UBE within the last 48 hours
+sorbs_noserver,Sorbs.net IP addresses and netblocks of where system administrators and ISPs owning the network have indicated that servers should not be present.
+sorbs_recent_spam,Sorbs.net List of hosts that have been noted as sending spam/UCE/UBE within the last 28 days (includes sorbs_new_spam)
+sorbs_smtp,Sorbs.net List of SMTP Open Relays.
+sorbs_web,Sorbs.net List of IPs which have spammer abusable vulnerabilities (e.g. FormMail scripts)
+sorbs_zombie,"Sorbs.net List of networks hijacked from their original owners, some of which have already used for spamming."
+spamhaus_drop,Spamhaus.org DROP list (according to their site this list should be dropped at tier-1 ISPs globally)
+spamhaus_edrop,Spamhaus.org EDROP (extended matches that should be used with DROP)
+sslbl,Abuse.ch SSL Blacklist bad SSL traffic related to malware or botnet activities
+sslbl_aggressive,"Abuse.ch SSL Blacklist The aggressive version of the SSL IP Blacklist contains all IPs that SSLBL ever detected being associated with a malicious SSL certificate. Since IP addresses can be reused (e.g. when the customer changes), this blacklist may cause false positives. Hence I highly recommend you to use the standard version instead of the aggressive one."
+sslproxies,SSLProxies.org open SSL proxies
+sslproxies_1d,SSLProxies.org open SSL proxies
+sslproxies_30d,SSLProxies.org open SSL proxies
+sslproxies_7d,SSLProxies.org open SSL proxies
+stopforumspam,StopForumSpam.com Banned IPs used by forum spammers
+stopforumspam_180d,StopForumSpam.com IPs used by forum spammers (last 180 days)
+stopforumspam_1d,StopForumSpam.com IPs used by forum spammers in the last 24 hours
+stopforumspam_30d,StopForumSpam.com IPs used by forum spammers (last 30 days)
+stopforumspam_365d,StopForumSpam.com IPs used by forum spammers (last 365 days)
+stopforumspam_7d,StopForumSpam.com IPs used by forum spammers (last 7 days)
+stopforumspam_90d,StopForumSpam.com IPs used by forum spammers (last 90 days)
+stopforumspam_toxic,StopForumSpam.com Networks that have large amounts of spambots and are flagged as toxic. Toxic IP ranges are infrequently changed.
+taichung,Taichung Education Center Blocked IP Addresses (attacks and bots).
+talosintel_ipfilter,TalosIntel.com List of known malicious network threats
+threatcrowd,Crowdsourced IP feed from ThreatCrowd. These feeds are not a substitute for the scale of auto-extracted command and control domains or the quality of some commercially provided feeds. But crowd-sourcing does go some way towards the quick sharing of threat intelligence between the community.
+tor_exits,TorProject.org list of all current TOR exit points (TorDNSEL)
+tor_exits_1d,TorProject.org list of all current TOR exit points (TorDNSEL)
+tor_exits_30d,TorProject.org list of all current TOR exit points (TorDNSEL)
+tor_exits_7d,TorProject.org list of all current TOR exit points (TorDNSEL)
+turris_greylist,Turris Greylist IPs that are blocked on the firewalls of Turris routers. The data is processed and clasified every week and behaviour of IP addresses that accessed a larger number of Turris routers is evaluated. The result is a list of addresses that have tried to obtain information about services on the router or tried to gain access to them. We do not recommend to use these data as a list of addresses that should be blocked but it can be used for example in analysis of the traffic in other networks.
+urandomusto_dns,"IP Feed about dns, crawled from several sources, including several twitter accounts."
+urandomusto_ftp,"IP Feed about ftp, crawled from several sources, including several twitter accounts."
+urandomusto_http,"IP Feed about http, crawled from several sources, including several twitter accounts."
+urandomusto_mailer,"IP Feed about mailer, crawled from several sources, including several twitter accounts."
+urandomusto_malware,"IP Feed about malware, crawled from several sources, including several twitter accounts."
+urandomusto_ntp,"IP Feed about ntp, crawled from several sources, including several twitter accounts."
+urandomusto_rdp,"IP Feed about rdp, crawled from several sources, including several twitter accounts."
+urandomusto_smb,"IP Feed about smb, crawled from several sources, including several twitter accounts."
+urandomusto_spam,"IP Feed about spam, crawled from several sources, including several twitter accounts."
+urandomusto_ssh,"IP Feed about ssh, crawled from several sources, including several twitter accounts."
+urandomusto_telnet,"IP Feed about telnet, crawled from several sources, including several twitter accounts."
+urandomusto_unspecified,"IP Feed about unspecified, crawled from several sources, including several twitter accounts."
+urandomusto_vnc,"IP Feed about vnc, crawled from several sources, including several twitter accounts."
+urlvir,URLVir.com Active Malicious IP Addresses Hosting Malware. URLVir is an online security service developed by NoVirusThanks Company Srl that automatically monitors changes of malicious URLs (executable files).
+uscert_hidden_cobra,"Since 2009, HIDDEN COBRA actors have leveraged their capabilities to target and compromise a range of victims; some intrusions have resulted in the exfiltration of data while others have been disruptive in nature. Commercial reporting has referred to this activity as Lazarus Group and Guardians of Peace. DHS and FBI assess that HIDDEN COBRA actors will continue to use cyber operations to advance their government’s military and strategic objectives. Tools and capabilities used by HIDDEN COBRA actors include DDoS botnets, keyloggers, remote access tools (RATs), and wiper malware. Variants of malware and tools used by HIDDEN COBRA actors include Destover, Wild Positron/Duuzer and Hangman."
+voipbl,"VoIPBL.org a distributed VoIP blacklist that is aimed to protects against VoIP Fraud and minimizing abuse for network that have publicly accessible PBX's. Several algorithms, external sources and manual confirmation are used before they categorize something as an attack and determine the threat level."
+vxvault,VxVault The latest 100 additions of VxVault.
+xforce_bccs,IBM X-Force Exchange Botnet Command and Control Servers
+xroxy,xroxy.com open proxies (this list is composed using an RSS feed)
+xroxy_1d,xroxy.com open proxies (this list is composed using an RSS feed)
+xroxy_30d,xroxy.com open proxies (this list is composed using an RSS feed)
+xroxy_7d,xroxy.com open proxies (this list is composed using an RSS feed)
+yoyo_adservers,Yoyo.org IPs of ad servers
+zeus,"Abuse.ch Zeus tracker standard, contains the same data as the ZeuS IP blocklist (zeus_badips) but with the slight difference that it doesn't exclude hijacked websites (level 2) and free web hosting providers (level 3). This means that this blocklist contains all IPv4 addresses associated with ZeuS C&Cs which are currently being tracked by ZeuS Tracker. Hence this blocklist will likely cause some false positives."
+zeus_badips,Abuse.ch Zeus tracker badips includes IPv4 addresses that are used by the ZeuS trojan. It is the recommened blocklist if you want to block only ZeuS IPs. It excludes IP addresses that ZeuS Tracker believes to be hijacked (level 2) or belong to a free web hosting provider (level 3). Hence the false postive rate should be much lower compared to the standard ZeuS IP blocklist.
