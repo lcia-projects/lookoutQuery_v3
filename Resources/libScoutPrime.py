@@ -28,19 +28,19 @@ class ScoutPrime_Query:
         try:
             sp_results = self.sp.submit_graph_query(minutes=2000000)
             sp_results=self.processResults(sp_results['results'])
-            #pprint (sp_results)
-            #sp_master_results=sp_results.copy()
-            sp_master_results=self.processResults(sp_results)
-            print ("--::",sp_master_results)
-            return sp_master_results
+            # pprint (sp_results)
+            # sp_master_results=sp_results.copy()
+            # sp_master_results=self.processResults(sp_results)
+            # print ("--::",sp_master_results)
+            return sp_results
 
         except Exception as e:
             msg = "The following error occurred: {}".format(e)
             print(msg)
             #self.buildReport(sp_master_results)
-        finally:
-            print ("::",sp_master_results)
-            return sp_master_results
+        # finally:
+        #    print ("::-::",sp_master_results)
+        #    return sp_master_results
 
     def processResults(self, sp_results):
         indicatorDict = {}
@@ -60,7 +60,7 @@ class ScoutPrime_Query:
             indicatorDict[indicator_Name]=indicatorData.copy()
             indicatorData.clear()
         print (":::", indicatorDict)
-        return indicatorDict.copy()
+        return indicatorDict
 
     def buildReport(self, dataDict):
         print ("building scout prime report")

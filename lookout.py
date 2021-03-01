@@ -20,6 +20,7 @@ from Resources import libAbeebus
 from Resources import libCIFv5
 from Resources import libFireHol
 from Resources import libScoutPrime
+from Resources import libShodan
 
 # Allows user to modify paremeters from commandline at runtime
 def argsParse():
@@ -86,6 +87,7 @@ if __name__ == '__main__':
     cifObj=libCIFv5.CIFv5_Query(lookout_config)
     fireHolObj=libFireHol.fireHol_Query(lookout_config)
     scoutPrimeObj=libScoutPrime.ScoutPrime_Query(lookout_config)
+    shodanObj=libShodan.shodan_Query(lookout_config)
     uniqueIPs=abeebusObj.getIPs(fileList[0])
 
     UniqueIPs={}
@@ -93,10 +95,11 @@ if __name__ == '__main__':
     for filename in fileList:
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
-        # UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
-        # UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
-        # UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
+        UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+        UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
+        UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
         UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
     print (UniqueIPs)
 
 
