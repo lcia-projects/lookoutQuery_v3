@@ -96,10 +96,11 @@ if __name__ == '__main__':
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
         UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
-        UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
-        UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
-        UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
-        UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
-    print (UniqueIPs)
+        # UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
+        # UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
+        # UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        # UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
+
+    lookoutObj.buildReport(UniqueIPs)
 
 

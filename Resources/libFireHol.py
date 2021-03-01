@@ -115,7 +115,7 @@ class fireHol_Query:
         # @@ still need to replace filenames with descriptions
         print ("time to Query!")
         for item in IPList:
-            print ("    --: ", item)
+            # print ("    --: ", item)
             if item in self.ipBlockList.keys():
                 itemDict[item]=self.ipBlockList[item].copy()
                 fileDict=itemDict.copy()

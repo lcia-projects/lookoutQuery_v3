@@ -59,7 +59,7 @@ class ScoutPrime_Query:
             indicatorData={"provider": indicator_Provider, "ticScore": indicator_TIC, "scout_ref_ID": indicator_ScoutRefID,"classification":indicator_Classifciations, "sources": indicator_Sources}
             indicatorDict[indicator_Name]=indicatorData.copy()
             indicatorData.clear()
-        print (":::", indicatorDict)
+
         return indicatorDict
 
     def buildReport(self, dataDict):

@@ -71,8 +71,6 @@ class CIFv5_Query:
                 for cifItem in resultsDict[file][ipItem]:
                     strWriteArray.append(cifItem)
             for item in strWriteArray:
-            #     print("::Keys:", item.keys())
-            #     print ("--:", item)
                 fileWriter.write(self.makeLine(item))
             fileWriter.close()
 
