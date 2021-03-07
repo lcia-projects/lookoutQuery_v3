@@ -16,8 +16,6 @@ class fireHol_Query:
     tagDescDict = {}
 
     def __init__(self, lookout_config):
-        print ("creating firehol object")
-        #pprint (lookout_config)
         self.lookout_config=lookout_config
         self.fireHol_dataFolder=lookout_config['fireHol_feed_folder']
         self.fireHol_lastUpdate=lookout_config['firehol_download_date']
@@ -25,7 +23,7 @@ class fireHol_Query:
         self.processBlockLists()
         self.readProviderDescriptions()
 
-        print ("FireHol :: Last Update:", datetime.fromtimestamp(self.fireHol_lastUpdate))
+        print ("  --: FireHol :: Last Update:", datetime.fromtimestamp(self.fireHol_lastUpdate))
         self.checkForUpdateData()
 
         #self.processIPList()
@@ -38,26 +36,27 @@ class fireHol_Query:
         dateDifference=(currentDate-datetime.fromtimestamp(self.fireHol_lastUpdate))
 
         if dateDifference.days > 1:
-            print ("Updating IP Sets from GIT repository, this could take a min or two.. please wait")
+            print ("  --: Updating IP Sets from GIT repository, this could take a min or two.. please wait")
             self.pullListsFromGit()
             self.lookout_config['firehol_download_date']=time.time()
-            print ("Firehol Databases Updated: new datetime/saved", self.lookout_config['firehol_download_date'])
+            print ("  --: Firehol Databases Updated: new datetime/saved", self.lookout_config['firehol_download_date'])
             self.saveYAMLConfig()
 
         else:
-            print ("Data from FireHol is up to date")
+            print ("  --: Data from FireHol is up to date")
 
     def pullListsFromGit(self):
         try:
-            print ("Pulling new datasets from GIT, this could take a minute or two, please wait..")
+            print ("--: Pulling new datasets from GIT, this could take a minute or two, please wait..")
             #remove previous data
+            print (self.fireHol_dataFolder)
             dirpath = Path(self.fireHol_dataFolder)
-            if dirpath.exists() and dirpath.is_dir():
-                shutil.rmtree(dirpath)
+            #if dirpath.exists() and dirpath.is_dir():
+            #    shutil.rmtree(dirpath)
             #pull new data
-            print ("Getting new data Lists.....")
+            print ("----: Getting new data Lists.....")
             git.Git(".").clone("git://github.com/firehol/blocklist-ipsets.git")
-            print ("Updated data sets recieved, moving forward with analysis")
+            print ("----: Updated data sets recieved, moving forward with analysis")
         except:
             print ("Error")
 
@@ -66,10 +65,10 @@ class fireHol_Query:
             documents = yaml.dump(self.lookout_config, file)
 
     def processBlockLists(self):
-        print ("Pulling all IP data from Datasets, This could take a min or two, please wait ...")
+        print ("----: Pulling all IP data from Datasets, This could take a min or two, please wait ...")
         blockListFileNames=fileList = glob((self.fireHol_dataFolder+"/*"))
 
-        for file in tqdm(blockListFileNames):
+        for file in blockListFileNames:
             if ".ipset" in file: # @@ figure out how to add an OR for .netsets, eventually figure out how to add the founders of countries
                 with open(file, "r") as filehandler:
                     for line in filehandler:
@@ -82,7 +81,7 @@ class fireHol_Query:
                             print("ERROR:", e)
                             errorString = "LoadFile ERROR: " + line + " : " + str(e) + "\n"
                             # pprint.pprint(self.deDupedDict)
-        print ("IP Data pulled from datasets and processed, moving forward with analysis")
+        print ("----: IP Data pulled from datasets and processed, moving forward with analysis")
 
     def addToIPDict(self, address, file):
         tag = file
@@ -97,7 +96,7 @@ class fireHol_Query:
             self.ipBlockList[address] = tagArray.copy()
 
     def readProviderDescriptions(self):
-        print ("Reading in data descriptions..")
+        print ("----: Reading in data descriptions..")
         with open("./Resources/firehol_tag_descriptions.csv", "r") as filehandler:
             for line in filehandler:
                 # try:
@@ -111,11 +110,10 @@ class fireHol_Query:
     def QueryFireHol(self, IPList):
         itemDict={}
         fileDict={}
-
         # @@ still need to replace filenames with descriptions
-        print ("time to Query!")
         for item in IPList:
-            # print ("    --: ", item)
+            #print ("    --: ", item)
+            #print (self.ipBlockList.keys())
             if item in self.ipBlockList.keys():
                 itemDict[item]=self.ipBlockList[item].copy()
                 fileDict=itemDict.copy()

@@ -13,8 +13,9 @@ import yaml
 import argparse
 from os import path
 from glob import glob
+from pprint import pprint
 
-
+# Custom Resource Libraries to make using outside API's easier
 from Resources import libLookout
 from Resources import libAbeebus
 from Resources import libCIFv5
@@ -31,6 +32,7 @@ def argsParse():
     parser.add_argument('--filename', help='single file to process')
     parser.add_argument('--cif', action="store_true",
                         help='query Cyber Intelligence Framework (internal self-hosted server)', required=False)
+    parser.add_argument('--geo', action="store_true", help='GeoIP IP Addresses', required=False)
     parser.add_argument('--firehol', action="store_true", help='query FireHOL blocklists', required=False)
     parser.add_argument('--scoutprime', action="store_true", help='query LookingGlass Scout Prime', required=False)
     parser.add_argument('--shodan', action="store_true", help='Query Shodan (very slow)', required=False)
@@ -44,11 +46,10 @@ def argsParse():
 
 # Main
 if __name__ == '__main__':
-    YAMLFILE="./lookout.yaml"
+    YAMLFILE="./lookout.yaml"  # System Configuration and Variables
     queryResults={}
 
     if (path.exists(YAMLFILE)):
-        print("Loading yaml settings file")
         # -- Loads Configuration File for LookOut --
         with open(YAMLFILE,"r") as file:
             lookout_config = yaml.load(file, Loader=yaml.FullLoader)
@@ -66,24 +67,27 @@ if __name__ == '__main__':
 
     # Read in File(s)
     if args['folder']:
-        folderName = ((args['folder']) + "/*")
+        folderName = ((args['folder'][0]) + "/*")
         fileList = glob(folderName)
     elif args['filename']:
         fileList = []
         fileList.append(args['filename'])
-        # print (fileList)
     else:
         print("ERROR:something went wrong, you cant have a folder and a file selection.")
         exit()
 
-    print (" --: Folder:", folderName)
-    print (" --: FileList to process:", fileList)
-    lookoutObj=libLookout.lookout()
+    print ("--==== Lookout v3 ====--")
+    print ("       --: Folder To Process:", folderName)
+    print ("       --: FileList to process:", fileList)
+    print("--=====================--")
+    print ("\n")
+    lookoutObj=libLookout.lookout(lookout_config)
     # abeebus is an open source project that takes files, finds all the IP addresses and GeoLocates them.
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
     abeebusObj=libAbeebus.abeebus(fileList)
+
     cifObj=libCIFv5.CIFv5_Query(lookout_config)
     fireHolObj=libFireHol.fireHol_Query(lookout_config)
     scoutPrimeObj=libScoutPrime.ScoutPrime_Query(lookout_config)
@@ -92,15 +96,25 @@ if __name__ == '__main__':
 
     UniqueIPs={}
     geoResults={}
+    print (args)
     for filename in fileList:
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
-        UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
-        # UniqueIPs[filename]['CIF']=cifObj.QueryCif(UniqueIPs[filename]['IPs'])
-        # UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
-        # UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
-        # UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        # if args['geo']==True or args['all']==True:
+        #     UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+        if args['firehol']==True or args['all']==True:
+            UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
+        if args['scoutprime']==True or args['all']==True:
+            UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        if args['shodan']==True or args['all']==True:
+            UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        if args['cif']==True or args['all']==True:
+            UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
 
+    #lookoutObj.buildReport(UniqueIPs)
+    #cifObj.buildReport(UniqueIPs[filename]['CIF'])
+    print ("--Final--")
     lookoutObj.buildReport(UniqueIPs)
+
 
 
