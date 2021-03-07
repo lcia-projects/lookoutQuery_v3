@@ -100,8 +100,8 @@ if __name__ == '__main__':
     for filename in fileList:
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
-        # if args['geo']==True or args['all']==True:
-        #     UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+        if args['geo']==True or args['all']==True:
+            UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
         if args['firehol']==True or args['all']==True:
             UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
         if args['scoutprime']==True or args['all']==True:

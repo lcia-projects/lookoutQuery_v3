@@ -23,7 +23,7 @@ class lookout:
                     self.processGeoIP(UniqueIPDict[file][module], file)
 
     def processFireHol(self, FileHolList, file):
-        print ("FireHol:", FileHolList)
+        print ("FireHol: ", file)
         fireholDescDict={}
 
         # Loads descriptions for Firehol Lists
@@ -51,7 +51,7 @@ class lookout:
         csvWriter.close()
 
     def processScoutPrime(self, ScoutPrimeList, file):
-        print ("Scout Prime:", ScoutPrimeList)
+        print ("Scout Prime: ", file)
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
         reportName = reportName.replace(".csv", "")
@@ -70,10 +70,32 @@ class lookout:
         #     print ("::", file, " - ", item, " - ", ScoutPrimeList[item])
 
     def processCIF(self, CIFList, file):
-        print ("CIF:  ")
+        print ("CIF:  ", file)
+        reportName = file
+        reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
+        reportName = reportName.replace(".csv", "")
+        reportName = reportName.replace(" ", "_")
+        reportName = reportName.replace("/", "")
+        reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_cif.csv"
+
+        csvWriter = open(reportName, "w")
         for item in CIFList:
             print ("    ::", file,":", item)
+            strLineToWrite=file+","+item+"\n"
+            csvWriter.write(strLineToWrite)
+        csvWriter.close()
 
     def processGeoIP(self, geoIPList, file):
-        print ("GeoIP", file,":", geoIPList)
+        reportName = file
+        reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
+        reportName = reportName.replace(".csv", "")
+        reportName = reportName.replace(" ", "_")
+        reportName = reportName.replace("/", "")
+        reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_geo.csv"
+
+        csvWriter = open(reportName, "w")
+        for item in geoIPList:
+            strLine=str(item)+"\n"
+            csvWriter.write(strLine)
+        csvWriter.close()
 

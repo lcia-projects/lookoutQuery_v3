@@ -36,26 +36,17 @@ class CIFv5_Query:
             return True
 
     def processResultsData(self, resultsData):
-        #self.queryData.clear()
-        #print (resultsData)
-        strLine=""
-        #strHeaderToWrite=('indicator'+','+'itype'+','+ 'tlp'+','+'provider'+','+ 'count'+','+'tags'+','+' confidence'+','+' description'+','+ 'countryCode'+','+ 'reportedDate'+','+ ' createdDate'+'\n')
 
-        csvHeader='indicator' +','+ 'itype' +','+ 'tlp' +','+ 'provider' +','+ 'group' +','+ 'count' +','+ 'tags' +','+ \
-                  'confidence' +','+ 'description' +','+ 'uuid' +','+ 'cc' +','+ 'latitude' +','+ 'timezone' +','+ \
-                  'longitude' +','+ 'reference' +','+ 'portlist' +','+ 'last_at' +','+ 'reported_at' +','+ 'asn' +','+\
-                  'asn_desc' +','+ 'indicator_ipv4' +','+ 'location' +','+ 'created_at' + '\n'
-        csvList=[]
-        csvList.append(str(csvHeader))
-        for row in resultsData:
-            for item in row[0]:
-                segment=str(row[0][item])+','
-                strLine=strLine+segment
-            #print (strLine)
-            strLine = strLine.rstrip(',')
-            strLine=strLine+'\n'
-            csvList.append(strLine)
-        return csvList.copy()
+        LineList=[]
+
+        if resultsData:
+            for item in resultsData:
+                #print ("->", item[0])
+                strLine=str(item[0]['indicator'])+","+str(item[0]['itype'])+","+str(item[0]['tlp'])+","+str(item[0]['provider'])+","+str(item[0]['count'])+","+str(item[0]['confidence'])+","+str(item[0]['description'])+","+str(datetime.fromtimestamp(item[0]['reported_at']))
+                print (strLine)
+                LineList.append(strLine)
+        return LineList.copy()
+
 
     def QueryCif(self, queryData):
         print ("Data to Query CIFv5")
