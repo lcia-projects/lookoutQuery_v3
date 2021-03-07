@@ -42,8 +42,20 @@ class CIFv5_Query:
         if resultsData:
             for item in resultsData:
                 #print ("->", item[0])
-                strLine=str(item[0]['indicator'])+","+str(item[0]['itype'])+","+str(item[0]['tlp'])+","+str(item[0]['provider'])+","+str(item[0]['count'])+","+str(item[0]['confidence'])+","+str(item[0]['description'])+","+str(datetime.fromtimestamp(item[0]['reported_at']))
-                print (strLine)
+
+                strIndicator=str(item[0]['indicator'])
+                strType=str(item[0]['itype'])
+                strTLP=str(item[0]['tlp'])
+                strProvider=str(item[0]['provider'])
+                strCount=str(item[0]['count'])
+                strConfidence=str(item[0]['confidence'])
+                if "description" in item[0].keys():
+                    strDescription=str(item[0]['description'])
+                else:
+                    strDescription=""
+                strReportTime=str(datetime.fromtimestamp(item[0]['reported_at']))
+                strLine=strIndicator+","+strType+","+strTLP+","+strProvider+","+strConfidence+strCount+","+strReportTime
+                #print (strLine)
                 LineList.append(strLine)
         return LineList.copy()
 

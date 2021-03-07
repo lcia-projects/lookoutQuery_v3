@@ -57,20 +57,15 @@ class abeebus:
         results = []
 
         for filteredAddress in tqdm(ipList):
-            # Show progress bar
-            #self.progressBar(i, total, status='Getting Results')
-            #i += 1
-
             formattedData = ''
-            # Build query URL from found addresses
-
-            # Sort addresses by count (descending)
-            #results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
-
-            if apiToken:
-                url = ('https://ipinfo.io/' + filteredAddress + '/json/?token=' + apiToken)
-            else:
-                url = ('https://ipinfo.io/' + filteredAddress + '/json')
+            try:
+                if apiToken:
+                    url = ('https://ipinfo.io/' + filteredAddress + '/json/?token=' + apiToken)
+                else:
+                    url = ('https://ipinfo.io/' + filteredAddress + '/json')
+            except:
+                print ("Hit Limit, exiting")
+                return
 
             try:
                 rawData = urlopen(url).read()
@@ -105,15 +100,7 @@ class abeebus:
                     else:
                         formattedData += 'N/A,'
 
-            # Get number of occurrences for IP address and add to results
-            # addressCount = addressCounts[filteredAddress]
-            # formattedData += str(addressCount)
-
-            # Add final formatted data string to list
             results.append(formattedData)
-
-        # Sort results from highest count to lowest
-        #results = sorted(results, key=lambda x: int(x.split(',')[9]), reverse=True)
         self.dataDict=results.copy()
 
         # Add column headers
