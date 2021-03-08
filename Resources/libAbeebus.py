@@ -8,10 +8,12 @@ import csv
 import argparse
 import urllib
 from tqdm import tqdm
+import geoip2.database
 
 class abeebus:
-    def __init__(self, filenames):
+    def __init__(self, filenames, lookout_config):
         self.filenames=filenames
+        self.lookout_config=lookout_config
         #dataResults = self.getData(self.filenames, "")
 
     def getIPs(self, filename):
@@ -107,6 +109,52 @@ class abeebus:
         results.insert(0, 'IP Address,Hostname,Country,Region,City,Postal Code,Latitude,Longitude,ASN,Count')
         #self.printData(results)
         return results.copy()
+
+    def geoLocateLocal(self, ipList):
+        
+        geoList=[]
+        if 'maxmind_path' in self.lookout_config.keys() and self.lookout_config['maxmind_path']!= None:
+            dbPath=self.lookout_config['maxmind_path']
+            reader = geoip2.database.Reader(dbPath+'/GeoLite2-City.mmdb')
+
+            for item in tqdm(ipList):
+                geo_iso = ""
+                geo_countryName = ""
+                geo_specificName = ""
+                geo_subDivision = ""
+                geo_city = ""
+                geo_postal = ""
+                geo_Lat = ""
+                geo_Long = ""
+                geo_Traits = ""
+                try:
+                    response = reader.city(item)
+                    if response.country.iso_code:
+                        geo_iso=str(response.country.iso_code)
+                    if response.country.name:
+                        geo_countryName=str(response.country.name)
+                    if response.subdivisions.most_specific.name:
+                        geo_specificName=str(response.subdivisions.most_specific.name)
+                    if response.subdivisions.most_specific.iso_code:
+                        geo_subDivision=str(response.subdivisions.most_specific.iso_code)
+                    if response.city.name:
+                        geo_city=str(response.city.name)
+                    if response.postal.code:
+                        geo_postal=str(response.postal.code)
+                    if response.location.latitude:
+                        geo_Lat=str(response.location.latitude)
+                    if response.location.longitude:
+                        geo_Long=str(response.location.longitude)
+                    if response.traits.network:
+                        geo_Traits=str(response.traits.network)
+                    strGeoLine=item+","+geo_iso+","+geo_countryName+","+geo_specificName+","+geo_subDivision+","+geo_city+","+geo_postal+","+ geo_Lat + "," + geo_Long+","+geo_Traits
+                    geoList.append(strGeoLine)
+                except:
+                    test=1
+        else:
+            print ("Error, no maxmind geoIP db path set in configuration file, must exit")
+        geoList.insert(0, 'IP Address,ISO,Country,SpecificName,SubDivision,City,PostalCode,Lat,Long,CIDR')
+        return geoList
 
     def printData(self,results):
         rows = list(csv.reader(results))

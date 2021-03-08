@@ -86,7 +86,7 @@ if __name__ == '__main__':
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
-    abeebusObj=libAbeebus.abeebus(fileList)
+    abeebusObj=libAbeebus.abeebus(fileList, lookout_config)
 
     cifObj=libCIFv5.CIFv5_Query(lookout_config)
     fireHolObj=libFireHol.fireHol_Query(lookout_config)
@@ -101,7 +101,10 @@ if __name__ == '__main__':
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
         if args['geo']==True or args['all']==True:
-            UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+            if len(UniqueIPs[filename]['IPs']) < 1000:
+                UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+            else:
+                UniqueIPs[filename]['geoIP'] = abeebusObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
         if args['firehol']==True or args['all']==True:
             UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
         if args['scoutprime']==True or args['all']==True:
