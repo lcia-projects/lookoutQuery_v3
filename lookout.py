@@ -101,10 +101,10 @@ if __name__ == '__main__':
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
         if args['geo']==True or args['all']==True:
-            if len(UniqueIPs[filename]['IPs']) < 1000:
-                UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
-            else:
-                UniqueIPs[filename]['geoIP'] = abeebusObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
+            #if len(UniqueIPs[filename]['IPs']) < 1000:
+            #UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
+            #else:
+            UniqueIPs[filename]['geoIP'] = abeebusObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
         if args['firehol']==True or args['all']==True:
             UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
         if args['scoutprime']==True or args['all']==True:

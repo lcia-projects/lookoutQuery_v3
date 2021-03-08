@@ -54,9 +54,10 @@ class CIFv5_Query:
                 else:
                     strDescription=""
                 strReportTime=str(datetime.fromtimestamp(item[0]['reported_at']))
-                strLine=strIndicator+","+strType+","+strTLP+","+strProvider+","+strConfidence+strCount+","+strReportTime
+                strLine=strIndicator+","+strType+","+strTLP+","+strProvider+","+strConfidence+","+strCount+","+strReportTime
                 #print (strLine)
                 LineList.append(strLine)
+            LineList.insert(0,"indicator,type,tlp,provider,confidence,count,report_time")
         return LineList.copy()
 
 

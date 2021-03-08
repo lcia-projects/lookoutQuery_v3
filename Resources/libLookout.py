@@ -60,7 +60,7 @@ class lookout:
         reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_scoutprime.csv"
 
         csvWriter = open(reportName, "w")
-
+        csvWriter.write("file,provider,tic_score,scoutPrime_Ref_ID,classification,sources\n")
         for item in ScoutPrimeList:
             strLineToWrite=file +","+ item+","+str(ScoutPrimeList[item]['provider'])+","+str(ScoutPrimeList[item]['ticScore'])+","+str(ScoutPrimeList[item]['scout_ref_ID'])+","+str(ScoutPrimeList[item]['classification'])+","+str(ScoutPrimeList[item]['sources'])+","+"\n"
             csvWriter.write(strLineToWrite)
