@@ -1,0 +1,5 @@
+requests~=2.25.1
+tqdm~=4.58.0
+shodan~=1.25.0
+geoip2~=4.1.0
+PyYAML~=5.4.1
