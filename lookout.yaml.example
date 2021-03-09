@@ -5,7 +5,7 @@ firehol_download_date: 1614542017.5856798
 lookout_default_inputFolder: ./ToProcess
 lookout_default_outputFolder: ./Reports
 scout_config_file: [path to lookingglass config]
-scout_api_token: [toke]
+scout_api_token: [token]
 scout_query_url: [url from looking glass]
 scout_server: [lookingglass server]
 shodan_token: [shodan token]

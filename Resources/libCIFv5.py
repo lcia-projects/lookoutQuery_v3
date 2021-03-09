@@ -5,7 +5,6 @@
 
 import requests
 from datetime import datetime
-import time
 from tqdm import tqdm
 import os
 
@@ -23,7 +22,7 @@ class CIFv5_Query:
     #checks to see if CIF server is online
     def checkForCIF(self):
         print ("-- Checking For CIF Server --")
-        pingString="ping -o -c 3 -W 3000 " + self.serverAddress
+        pingString="ping -o -c 1 -W 3000 " + self.serverAddress
         ret = os.system(pingString)
         if ret != 0:
             print (" ERROR: No CIF Server Found")
@@ -73,93 +72,3 @@ class CIFv5_Query:
             return(self.processResultsData(responseArray))
         except:
             print ("ERROR ON:", ":", item)
-
-    # def buildReport(self, resultsDict):
-    #     strHeaderToWrite=('indicator'+','+'itype'+','+ 'tlp'+','+'provider'+','+ 'count'+','+'tags'+','+' confidence'+','+' description'+','+ 'countryCode'+','+ 'reportedDate'+','+ ' createdDate'+'\n')
-    #     strWriteArray=[]
-    #
-    #     print ("-->",type(resultsDict), resultsDict.keys())
-    #
-    #     # for file in resultsDict:
-    #     #     print ("type:", self.cif_outputFolder, type(self.cif_outputFolder), "type:", file, type(file))
-    #     #     strFilenameWithPath=str(self.cif_outputFolder)+'/'+file
-    #     #     print ("::",strFilenameWithPath)
-    #     #     strFilenameWithPath=strFilenameWithPath.replace(".txt", "_CIFv5_results.csv")
-    #     #     fileWriter = open(strFilenameWithPath, "w")
-    #     #     fileWriter.write(strHeaderToWrite)
-    #     #     print("CIF FILE:", file)
-    #     #     for ipItem in resultsDict[file]:
-    #     #         #print ("  :",ipItem, ":", resultsDict[file][ipItem])
-    #     #         for cifItem in resultsDict[file][ipItem]:
-    #     #             strWriteArray.append(cifItem)
-    #     #     for item in strWriteArray:
-    #     #         fileWriter.write(self.makeLine(item))
-    #     #     fileWriter.close()
-
-    def makeLine(self, data):
-        #print ("Keys:", data.keys())
-        if data['indicator']:
-            strIndicator=data['indicator']
-        else:
-            strIndicator=' '
-
-        if data['itype']:
-            strItype=data['itype']
-        else:
-            strItype=' '
-
-        if data['tlp']:
-            strtlp=data['tlp']
-        else:
-            strtlp=' '
-
-        if data['provider']:
-            strProvider=data['provider']
-        else:
-            strProvider=' '
-
-        strTags=""
-        if data['tags']:
-            strTags=str(data['tags'])
-            strTags=strTags.replace(",",":")
-            strTags = strTags.replace("'", "")
-            strTags = strTags.replace("[", "")
-            strTags = strTags.replace("]", "")
-
-        else:
-            strTags = ' '
-
-        if data['confidence']:
-            strConfidence = str(data['confidence'])
-        else:
-            strConfidence = ' '
-
-        if 'description' in data.keys():
-            strDescription = data['description']
-        else:
-            strDescription = ' '
-
-        if 'cc' in data.keys():
-            strCountryCode = str(data['cc'])
-        else:
-            strCountryCode = ' '
-
-        if 'reported_at' in data.keys():
-            strReportedDate = data['reported_at']
-            strReportedDate =time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(strReportedDate))
-        else:
-            strReportedDate = ' '
-
-        if 'created_at' in data.keys():
-            strCreatedDate = data['created_at']
-            strCreatedDate = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(strCreatedDate))
-        else:
-            strCreatedDate = ' '
-
-        if 'count' in data.keys():
-            strCount = str(data['count'])
-        else:
-            strCount = ' '
-
-        strLine= strIndicator+","+strItype+","+strtlp+","+strProvider+","+strCount+","+strTags+","+strConfidence+","+strDescription+","+strCountryCode+","+strReportedDate+","+strCreatedDate+"\n"
-        return strLine

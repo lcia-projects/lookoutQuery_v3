@@ -120,7 +120,8 @@ if __name__ == '__main__':
             UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
         if args['cif']==True or args['all']==True:
             print ("----: Querying CIF:")
-            UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
+            if cifObj.checkForCIF()== True:
+                UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
 
     print ("\n")
     print(colored("----==============================================================-----","blue"))

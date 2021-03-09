@@ -68,19 +68,22 @@ class lookout:
         csvWriter.close()
 
     def processCIF(self, CIFList, file):
-        print ("--: Writing CIF:  ", file)
-        reportName = file
-        reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
-        reportName = reportName.replace(".csv", "")
-        reportName = reportName.replace(" ", "_")
-        reportName = reportName.replace("/", "")
-        reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_cif.csv"
+        try:
+            print ("--: Writing CIF:  ", file)
+            reportName = file
+            reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
+            reportName = reportName.replace(".csv", "")
+            reportName = reportName.replace(" ", "_")
+            reportName = reportName.replace("/", "")
+            reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_cif.csv"
 
-        csvWriter = open(reportName, "w")
-        for item in CIFList:
-            strLineToWrite=file+","+item+"\n"
-            csvWriter.write(strLineToWrite)
-        csvWriter.close()
+            csvWriter = open(reportName, "w")
+            for item in CIFList:
+                strLineToWrite=file+","+item+"\n"
+                csvWriter.write(strLineToWrite)
+            csvWriter.close()
+        except:
+            print ("There was an error writing the cif file")
 
     def processGeoIP(self, geoIPList, file):
         print ("--: Writing GeoIP: ", file)
