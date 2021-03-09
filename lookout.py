@@ -88,6 +88,7 @@ if __name__ == '__main__':
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
+    #
     geoObj=libGeo.Geo(fileList, lookout_config)
 
     cifObj=libCIFv5.CIFv5_Query(lookout_config)
