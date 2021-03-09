@@ -7,7 +7,7 @@ import csv
 
 class lookout:
     def __init__(self, lookout_config):
-        print ("--=== Lookout Started, Please Wait ===--")
+        print ("  --=== Lookout Started, Please Wait ===--")
         self.lookout_config=lookout_config
 
     def buildReport(self, UniqueIPDict):

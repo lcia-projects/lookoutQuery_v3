@@ -18,7 +18,7 @@ from termcolor import colored
 
 # Custom Resource Libraries to make using outside API's easier
 from Resources import libLookout
-from Resources import libAbeebus
+from Resources import libGeo
 from Resources import libCIFv5
 from Resources import libFireHol
 from Resources import libScoutPrime
@@ -88,13 +88,13 @@ if __name__ == '__main__':
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
-    abeebusObj=libAbeebus.abeebus(fileList, lookout_config)
+    geoObj=libGeo.Geo(fileList, lookout_config)
 
     cifObj=libCIFv5.CIFv5_Query(lookout_config)
     fireHolObj=libFireHol.fireHol_Query(lookout_config)
     scoutPrimeObj=libScoutPrime.ScoutPrime_Query(lookout_config)
     shodanObj=libShodan.shodan_Query(lookout_config)
-    uniqueIPs=abeebusObj.getIPs(fileList[0])
+    uniqueIPs=geoObj.getIPs(fileList[0])
 
     UniqueIPs={}
     geoResults={}
@@ -105,10 +105,10 @@ if __name__ == '__main__':
         print (colored(("               Processing: " + filename),"blue"))
         print(colored("===========================================================================","blue"))
         UniqueIPs[filename]={}
-        UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
+        UniqueIPs[filename]['IPs']=geoObj.getIPs(filename)
         if args['geo']==True or args['all']==True:
             print("----: Geo Locating IP Addresses:")
-            UniqueIPs[filename]['geoIP'] = abeebusObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
+            UniqueIPs[filename]['geoIP'] = geoObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
         if args['firehol']==True or args['all']==True:
             print("----: Querying Firehol Databases:")
             UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
@@ -120,13 +120,13 @@ if __name__ == '__main__':
             UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
         if args['cif']==True or args['all']==True:
             print ("----: Querying CIF:")
-            if cifObj.checkForCIF()== True:
+            if cifObj.checkForCIF():
                 UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
 
     print ("\n")
     print(colored("----==============================================================-----","blue"))
     print (colored("--: Saving Data", "blue"))
-    print (colored(("  --: Report Location:" + lookout_config['lookout_default_outputFolder']),"blue"))
+    print (colored(("--: Report Location:" + lookout_config['lookout_default_outputFolder']),"blue"))
     print (colored("----=============================================================-----","blue"))
     lookoutObj.buildReport(UniqueIPs)
 
