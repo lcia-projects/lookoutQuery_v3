@@ -1,0 +1,13 @@
+file,provider,tic_score,scoutPrime_Ref_ID,classification,sources
+./ToProcess/dc.dns.txt,172.217.2.234,['DshieldDailySources'],28,2899903210,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,172.217.12.67,['DshieldDailySources'],28,2899905603,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,93.184.215.201,['LookingGlass Reputation'],36,1572394953,['Probes'],['Probing Bogons'],
+./ToProcess/dc.dns.txt,72.21.91.29,['LookingGlass Reputation'],46,1209359133,['Probes'],['Probing Bogons', 'Daily Sources'],
+./ToProcess/dc.dns.txt,40.125.122.176,['DshieldDailySources'],20,679312048,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,23.46.227.198,['DshieldDailySources'],16,388948934,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,142.250.34.2,['DshieldDailySources'],24,2398757378,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,172.217.14.163,['DshieldDailySources'],29,2899906211,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,204.79.197.200,['DshieldDailySources'],29,3427780040,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,52.94.229.214,['DshieldDailySources'],21,878634454,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,72.21.81.240,['DshieldDailySources'],26,1209356784,['Malicious'],['Daily Sources'],
+./ToProcess/dc.dns.txt,72.21.81.200,['DshieldDailySources'],48,1209356744,['Malicious'],['Probing Bogons', 'Daily Sources'],

@@ -1,0 +1,4 @@
+[scoutprime]
+base_url=https://foxtrot.lookingglasscyber.com/api
+api_token=d78cf6448c344e4da0a21a1ddabca389
+ne_query={"query":["and",["=","type",["associated-with","distributes","indicates"]],["or",["=","right.type",["file"]],["=","left.type",["ipv4","fqdn","cidrv4","file"]]],["and",["=","left.name",_network_elements_data_]]],"fields":["left.ticScore","left.name","left.threatNames","left.classifications","left.threatName","right.classifications","left.md5","left.md5s","left.sha1","left.sha1s","left.sha256","left.sha256s","left.sha512","left.sha512s","right.threatName","right.classifications","sources","meta"],"limit":2000000}

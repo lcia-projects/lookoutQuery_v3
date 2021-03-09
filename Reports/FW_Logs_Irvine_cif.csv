@@ -1,0 +1,11 @@
+./ToProcess/FW Logs Irvine.csv,indicator,type,tlp,provider,confidence,count,report_time
+./ToProcess/FW Logs Irvine.csv,185.236.11.7,ipv4,green,csirtg.io,3,4,2021-01-27 21:53:24
+./ToProcess/FW Logs Irvine.csv,193.27.229.219,ipv4,green,csirtg.io,3,1,2020-12-21 18:54:09
+./ToProcess/FW Logs Irvine.csv,194.147.140.63,ipv4,green,csirtg.io,3,1,2021-03-06 18:43:31
+./ToProcess/FW Logs Irvine.csv,45.155.205.58,ipv4,green,csirtg.io,3,2,2021-01-29 00:55:54
+./ToProcess/FW Logs Irvine.csv,45.135.232.22,ipv4,green,csirtg.io,3,1,2021-02-08 12:46:12
+./ToProcess/FW Logs Irvine.csv,194.147.140.61,ipv4,green,csirtg.io,3,1,2021-03-04 09:36:58
+./ToProcess/FW Logs Irvine.csv,194.147.140.29,ipv4,green,csirtg.io,3,11,2021-01-24 21:53:12
+./ToProcess/FW Logs Irvine.csv,194.147.140.62,ipv4,green,csirtg.io,3,1,2021-03-03 05:36:56
+./ToProcess/FW Logs Irvine.csv,193.27.229.224,ipv4,green,csirtg.io,3,3,2021-01-14 00:52:29
+./ToProcess/FW Logs Irvine.csv,185.236.11.6,ipv4,green,csirtg.io,3,1,2021-03-09 10:37:03

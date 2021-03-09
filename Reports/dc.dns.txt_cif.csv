@@ -1,0 +1,7 @@
+./ToProcess/dc.dns.txt,indicator,type,tlp,provider,confidence,count,report_time
+./ToProcess/dc.dns.txt,172.217.14.163,ipv4,amber,umbrella.cisco.com,0,3,2020-05-17 19:30:58
+./ToProcess/dc.dns.txt,172.217.14.174,ipv4,green,lafusioncenter:fatt,4,4,2021-02-08 20:47:07
+./ToProcess/dc.dns.txt,72.21.91.29,ipv4,amber,dataplane.org,3,1,2021-01-09 11:52:49
+./ToProcess/dc.dns.txt,142.250.68.142,ipv4,green,lafusioncenter:fatt,4,3,2021-02-08 20:47:05
+./ToProcess/dc.dns.txt,172.217.2.238,ipv4,green,lafusioncenter:fatt,4,1,2021-02-08 20:47:08
+./ToProcess/dc.dns.txt,72.21.81.200,ipv4,amber,dataplane.org,3,1,2021-01-14 12:53:00
