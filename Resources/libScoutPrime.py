@@ -4,7 +4,6 @@ from Resources.ScoutPrime import scoutprime
 
 class ScoutPrime_Query:
     def __init__(self, lookout_config):
-        print ("Creating Scout Prime Object:")
         self.scout_api_token=lookout_config['scout_api_token']
         self.scout_server=lookout_config['scout_server']
         self.scout_query_url=lookout_config['scout_query_url']
@@ -12,7 +11,6 @@ class ScoutPrime_Query:
         self.sp = scoutprime.ScoutPrime(config=lookout_config['scout_config_file'], debug=True)
 
     def QueryIPs(self, ipList):
-        print ("Querying Scout Prime..")
         sp_master_results={}
         # scout prime takes in an array of IP addresses, so we need to iterate through the dictionary to get the array
         # of IP's from each file

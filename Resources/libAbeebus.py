@@ -5,8 +5,6 @@ import sys
 import json
 import re
 import csv
-import argparse
-import urllib
 from tqdm import tqdm
 import geoip2.database
 
@@ -14,8 +12,8 @@ class abeebus:
     def __init__(self, filenames, lookout_config):
         self.filenames=filenames
         self.lookout_config=lookout_config
-        #dataResults = self.getData(self.filenames, "")
 
+    # gets the unique IP addressses from file and returns them in a list
     def getIPs(self, filename):
         addresses=[]
         filteredAddresses=[]
@@ -51,6 +49,7 @@ class abeebus:
         self.filteredAddresses=filteredAddresses
         return filteredAddresses.copy()
 
+    # uses ipinfo.io, is limited to 1000 IPs per hour
     def geoLocate(self, ipList, apiToken):
         from urllib.request import urlopen
 
@@ -110,6 +109,7 @@ class abeebus:
         #self.printData(results)
         return results.copy()
 
+    # uses local maxmind geoIP database (free but have to register), MUCH faster, no query limits
     def geoLocateLocal(self, ipList):
         
         geoList=[]

@@ -14,6 +14,7 @@ import argparse
 from os import path
 from glob import glob
 from pprint import pprint
+from termcolor import colored
 
 # Custom Resource Libraries to make using outside API's easier
 from Resources import libLookout
@@ -76,11 +77,12 @@ if __name__ == '__main__':
         print("ERROR:something went wrong, you cant have a folder and a file selection.")
         exit()
 
-    print ("--==== Lookout v3 ====--")
-    print ("       --: Folder To Process:", folderName)
-    print ("       --: FileList to process:", fileList)
-    print("--=====================--")
-    print ("\n")
+    print(colored("--===================================================--","blue"))
+    print (colored("--                  Lookout v3                      --","blue"))
+    print(colored("--===================================================--","blue"))
+    print (colored(("       --: Folder To Process:"+ folderName),"blue"))
+    print (colored(("       --: FileList to process:"+ str(fileList)),"blue"))
+    print(colored("--===================================================--","blue"))
     lookoutObj=libLookout.lookout(lookout_config)
     # abeebus is an open source project that takes files, finds all the IP addresses and GeoLocates them.
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
@@ -96,27 +98,35 @@ if __name__ == '__main__':
 
     UniqueIPs={}
     geoResults={}
-    print (args)
+    print ("\n")
     for filename in fileList:
+        print(" ")
+        print (colored("===========================================================================", "blue"))
+        print (colored(("               Processing: " + filename),"blue"))
+        print(colored("===========================================================================","blue"))
         UniqueIPs[filename]={}
         UniqueIPs[filename]['IPs']=abeebusObj.getIPs(filename)
         if args['geo']==True or args['all']==True:
-            #if len(UniqueIPs[filename]['IPs']) < 1000:
-            #UniqueIPs[filename]['geoIP']=abeebusObj.geoLocate(UniqueIPs[filename]['IPs'], apiToken=None)
-            #else:
+            print("----: Geo Locating IP Addresses:")
             UniqueIPs[filename]['geoIP'] = abeebusObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
         if args['firehol']==True or args['all']==True:
+            print("----: Querying Firehol Databases:")
             UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
         if args['scoutprime']==True or args['all']==True:
+            print("----: Querying Scout Prime Databases")
             UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
         if args['shodan']==True or args['all']==True:
+            print ("----: Querying Shodan:")
             UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
         if args['cif']==True or args['all']==True:
+            print ("----: Querying CIF:")
             UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
 
-    #lookoutObj.buildReport(UniqueIPs)
-    #cifObj.buildReport(UniqueIPs[filename]['CIF'])
-    print ("--Final--")
+    print ("\n")
+    print(colored("----==============================================================-----","blue"))
+    print (colored("--: Saving Data", "blue"))
+    print (colored(("  --: Report Location:" + lookout_config['lookout_default_outputFolder']),"blue"))
+    print (colored("----=============================================================-----","blue"))
     lookoutObj.buildReport(UniqueIPs)
 
 

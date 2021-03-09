@@ -1,14 +1,11 @@
-import os
 import sys
-from pprint import pprint
 from datetime import datetime
 import time
-from tqdm import tqdm
 from pathlib import Path
-import shutil
 import git
 import yaml
 from glob import glob
+import shutil
 
 class fireHol_Query:
     ipFileList = []
@@ -51,8 +48,8 @@ class fireHol_Query:
             #remove previous data
             print (self.fireHol_dataFolder)
             dirpath = Path(self.fireHol_dataFolder)
-            #if dirpath.exists() and dirpath.is_dir():
-            #    shutil.rmtree(dirpath)
+            if dirpath.exists() and dirpath.is_dir():
+                shutil.rmtree(dirpath)
             #pull new data
             print ("----: Getting new data Lists.....")
             git.Git(".").clone("git://github.com/firehol/blocklist-ipsets.git")
@@ -110,14 +107,10 @@ class fireHol_Query:
     def QueryFireHol(self, IPList):
         itemDict={}
         fileDict={}
-        # @@ still need to replace filenames with descriptions
         for item in IPList:
-            #print ("    --: ", item)
-            #print (self.ipBlockList.keys())
             if item in self.ipBlockList.keys():
                 itemDict[item]=self.ipBlockList[item].copy()
                 fileDict=itemDict.copy()
-        #self.buildReport(fileDict)
         return fileDict.copy()
 
     def buildReport(self, dataDict):

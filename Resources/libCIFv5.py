@@ -3,7 +3,6 @@
 #
 # CIFv5 is an opensource self hosted indicator of threat database that can be queried using a REST API
 
-from pprint import pprint
 import requests
 from datetime import datetime
 import time
@@ -41,8 +40,6 @@ class CIFv5_Query:
 
         if resultsData:
             for item in resultsData:
-                #print ("->", item[0])
-
                 strIndicator=str(item[0]['indicator'])
                 strType=str(item[0]['itype'])
                 strTLP=str(item[0]['tlp'])
@@ -55,56 +52,49 @@ class CIFv5_Query:
                     strDescription=""
                 strReportTime=str(datetime.fromtimestamp(item[0]['reported_at']))
                 strLine=strIndicator+","+strType+","+strTLP+","+strProvider+","+strConfidence+","+strCount+","+strReportTime
-                #print (strLine)
                 LineList.append(strLine)
             LineList.insert(0,"indicator,type,tlp,provider,confidence,count,report_time")
         return LineList.copy()
 
-
     def QueryCif(self, queryData):
-        print ("Data to Query CIFv5")
         responseArray=[]
         resultsDict={}
         resultsDict.clear()
         responseArray.clear()
-        processedResultsList=[]
-        #try:
-        for item in tqdm(queryData):
-            headers = {'accept': 'application/json', }
-            params = (('indicator', item), ('nolog', 1))
-            response = requests.get(self.serverLink, headers=headers, params=params)
-            if len(response.json()) > 0 :
-                responseArray.append(response.json())
 
-        return(self.processResultsData(responseArray))
+        try:
+            for item in tqdm(queryData):
+                headers = {'accept': 'application/json', }
+                params = (('indicator', item), ('nolog', 1))
+                response = requests.get(self.serverLink, headers=headers, params=params)
+                if len(response.json()) > 0 :
+                    responseArray.append(response.json())
 
-        # except:
-        #     print ("ERROR ON:", ":", item)
-        # finally:
-        #     print ("Complete")
-        #     return processedResultsList.copy()
+            return(self.processResultsData(responseArray))
+        except:
+            print ("ERROR ON:", ":", item)
 
-    def buildReport(self, resultsDict):
-        strHeaderToWrite=('indicator'+','+'itype'+','+ 'tlp'+','+'provider'+','+ 'count'+','+'tags'+','+' confidence'+','+' description'+','+ 'countryCode'+','+ 'reportedDate'+','+ ' createdDate'+'\n')
-        strWriteArray=[]
-
-        print ("-->",type(resultsDict), resultsDict.keys())
-
-        # for file in resultsDict:
-        #     print ("type:", self.cif_outputFolder, type(self.cif_outputFolder), "type:", file, type(file))
-        #     strFilenameWithPath=str(self.cif_outputFolder)+'/'+file
-        #     print ("::",strFilenameWithPath)
-        #     strFilenameWithPath=strFilenameWithPath.replace(".txt", "_CIFv5_results.csv")
-        #     fileWriter = open(strFilenameWithPath, "w")
-        #     fileWriter.write(strHeaderToWrite)
-        #     print("CIF FILE:", file)
-        #     for ipItem in resultsDict[file]:
-        #         #print ("  :",ipItem, ":", resultsDict[file][ipItem])
-        #         for cifItem in resultsDict[file][ipItem]:
-        #             strWriteArray.append(cifItem)
-        #     for item in strWriteArray:
-        #         fileWriter.write(self.makeLine(item))
-        #     fileWriter.close()
+    # def buildReport(self, resultsDict):
+    #     strHeaderToWrite=('indicator'+','+'itype'+','+ 'tlp'+','+'provider'+','+ 'count'+','+'tags'+','+' confidence'+','+' description'+','+ 'countryCode'+','+ 'reportedDate'+','+ ' createdDate'+'\n')
+    #     strWriteArray=[]
+    #
+    #     print ("-->",type(resultsDict), resultsDict.keys())
+    #
+    #     # for file in resultsDict:
+    #     #     print ("type:", self.cif_outputFolder, type(self.cif_outputFolder), "type:", file, type(file))
+    #     #     strFilenameWithPath=str(self.cif_outputFolder)+'/'+file
+    #     #     print ("::",strFilenameWithPath)
+    #     #     strFilenameWithPath=strFilenameWithPath.replace(".txt", "_CIFv5_results.csv")
+    #     #     fileWriter = open(strFilenameWithPath, "w")
+    #     #     fileWriter.write(strHeaderToWrite)
+    #     #     print("CIF FILE:", file)
+    #     #     for ipItem in resultsDict[file]:
+    #     #         #print ("  :",ipItem, ":", resultsDict[file][ipItem])
+    #     #         for cifItem in resultsDict[file][ipItem]:
+    #     #             strWriteArray.append(cifItem)
+    #     #     for item in strWriteArray:
+    #     #         fileWriter.write(self.makeLine(item))
+    #     #     fileWriter.close()
 
     def makeLine(self, data):
         #print ("Keys:", data.keys())
@@ -130,7 +120,6 @@ class CIFv5_Query:
 
         strTags=""
         if data['tags']:
-            #print ("Length of tags:", len(data['tags']))
             strTags=str(data['tags'])
             strTags=strTags.replace(",",":")
             strTags = strTags.replace("'", "")
@@ -172,6 +161,5 @@ class CIFv5_Query:
         else:
             strCount = ' '
 
-        #strHeaderToWrite=('indicator'+','+'itype'+','+ 'tlp'+','+'provider'+','+ 'count'+','+'tags'+','+' confidence'+','+' description'+','+ 'countryCode'+','+ 'reportedDate'+','+ ' createdDate'+'\n')
         strLine= strIndicator+","+strItype+","+strtlp+","+strProvider+","+strCount+","+strTags+","+strConfidence+","+strDescription+","+strCountryCode+","+strReportedDate+","+strCreatedDate+"\n"
         return strLine

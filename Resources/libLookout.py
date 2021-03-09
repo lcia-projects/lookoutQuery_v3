@@ -23,7 +23,7 @@ class lookout:
                     self.processGeoIP(UniqueIPDict[file][module], file)
 
     def processFireHol(self, FileHolList, file):
-        print ("FireHol: ", file)
+        print ("--: Writing FireHol: ", file)
         fireholDescDict={}
 
         # Loads descriptions for Firehol Lists
@@ -51,7 +51,7 @@ class lookout:
         csvWriter.close()
 
     def processScoutPrime(self, ScoutPrimeList, file):
-        print ("Scout Prime: ", file)
+        print ("--: Writing Scout Prime: ", file)
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
         reportName = reportName.replace(".csv", "")
@@ -61,16 +61,14 @@ class lookout:
 
         csvWriter = open(reportName, "w")
         csvWriter.write("file,provider,tic_score,scoutPrime_Ref_ID,classification,sources\n")
-        for item in ScoutPrimeList:
-            strLineToWrite=file +","+ item+","+str(ScoutPrimeList[item]['provider'])+","+str(ScoutPrimeList[item]['ticScore'])+","+str(ScoutPrimeList[item]['scout_ref_ID'])+","+str(ScoutPrimeList[item]['classification'])+","+str(ScoutPrimeList[item]['sources'])+","+"\n"
-            csvWriter.write(strLineToWrite)
+        if ScoutPrimeList:
+            for item in ScoutPrimeList:
+                strLineToWrite=file +","+ item+","+str(ScoutPrimeList[item]['provider'])+","+str(ScoutPrimeList[item]['ticScore'])+","+str(ScoutPrimeList[item]['scout_ref_ID'])+","+str(ScoutPrimeList[item]['classification'])+","+str(ScoutPrimeList[item]['sources'])+","+"\n"
+                csvWriter.write(strLineToWrite)
         csvWriter.close()
 
-        # for item in ScoutPrimeList:
-        #     print ("::", file, " - ", item, " - ", ScoutPrimeList[item])
-
     def processCIF(self, CIFList, file):
-        print ("CIF:  ", file)
+        print ("--: Writing CIF:  ", file)
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
         reportName = reportName.replace(".csv", "")
@@ -80,12 +78,12 @@ class lookout:
 
         csvWriter = open(reportName, "w")
         for item in CIFList:
-            print ("    ::", file,":", item)
             strLineToWrite=file+","+item+"\n"
             csvWriter.write(strLineToWrite)
         csvWriter.close()
 
     def processGeoIP(self, geoIPList, file):
+        print ("--: Writing GeoIP: ", file)
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
         reportName = reportName.replace(".csv", "")
@@ -98,4 +96,3 @@ class lookout:
             strLine=str(item)+"\n"
             csvWriter.write(strLine)
         csvWriter.close()
-
