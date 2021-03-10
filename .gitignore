@@ -6,3 +6,8 @@
 /ToProcess/
 /Reports/
 *.cif
+*.cfg
+*.log
+*.txt
+*.csv
+*.yaml
