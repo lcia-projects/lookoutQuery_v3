@@ -21,6 +21,8 @@ class lookout:
                     self.processCIF(UniqueIPDict[file][module], file)
                 if module == "geoIP":
                     self.processGeoIP(UniqueIPDict[file][module], file)
+                if module == "cymru":
+                    print ("cymru")
 
     def processFireHol(self, FileHolList, file):
         print ("--: Writing FireHol: ", file)

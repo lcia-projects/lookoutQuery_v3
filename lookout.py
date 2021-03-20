@@ -23,6 +23,8 @@ from Resources import libCIFv5
 from Resources import libFireHol
 from Resources import libScoutPrime
 from Resources import libShodan
+from Resources import libTeamCymru
+
 
 # Allows user to modify paremeters from commandline at runtime
 def argsParse():
@@ -37,6 +39,7 @@ def argsParse():
     parser.add_argument('--firehol', action="store_true", help='query FireHOL blocklists', required=False)
     parser.add_argument('--scoutprime', action="store_true", help='query LookingGlass Scout Prime', required=False)
     parser.add_argument('--shodan', action="store_true", help='Query Shodan (very slow)', required=False)
+    parser.add_argument('--cymru', action="store_true", help='Query Team Cymru', required=False)
     parser.add_argument('--all', action="store_true", help='Query All Available Modules', required=False)
     parser.add_argument('--fullreport', action="store_true", help='Full Indepth Report (MUCH longer)', required=False)
     parser.add_argument('--output', help='set an output folder, if blank, folder will be date-time', required=False)
@@ -45,26 +48,27 @@ def argsParse():
     args = vars(parser.parse_args())
     return args
 
+
 # Main
 if __name__ == '__main__':
-    YAMLFILE="./lookout.yaml"  # System Configuration and Variables
-    queryResults={}
+    YAMLFILE = "./lookout.yaml"  # System Configuration and Variables
+    queryResults = {}
 
     if (path.exists(YAMLFILE)):
         # -- Loads Configuration File for LookOut --
-        with open(YAMLFILE,"r") as file:
+        with open(YAMLFILE, "r") as file:
             lookout_config = yaml.load(file, Loader=yaml.FullLoader)
     else:
         print("ERROR: No config file, please refer to lookout.yml.example in root folder of script")
         exit()
 
     # Process and error check commandline arguments
-    args=argsParse()
+    args = argsParse()
 
     # if no folder or file given, defaults to what is in the lookout.yaml configuration file
-    if args['folder']==None and args['filename']==None:
-        print (" --: No Folder or Filename given for processing, using default value in Lookout.yaml <input folder>")
-        args['folder']=lookout_config['lookout_default_inputFolder']
+    if args['folder'] == None and args['filename'] == None:
+        print(" --: No Folder or Filename given for processing, using default value in Lookout.yaml <input folder>")
+        args['folder'] = lookout_config['lookout_default_inputFolder']
 
     # Read in File(s)
     if args['folder']:
@@ -77,59 +81,60 @@ if __name__ == '__main__':
         print("ERROR:something went wrong, you cant have a folder and a file selection.")
         exit()
 
-    print(colored("--===================================================--","blue"))
-    print (colored("--                  Lookout v3                      --","blue"))
-    print(colored("--===================================================--","blue"))
-    print (colored(("       --: Folder To Process:"+ folderName),"blue"))
-    print (colored(("       --: FileList to process:"+ str(fileList)),"blue"))
-    print(colored("--===================================================--","blue"))
-    lookoutObj=libLookout.lookout(lookout_config)
+    print(colored("--===================================================--", "blue"))
+    print(colored("--                  Lookout v3                      --", "blue"))
+    print(colored("--===================================================--", "blue"))
+    print(colored(("       --: Folder To Process:" + folderName), "blue"))
+    print(colored(("       --: FileList to process:" + str(fileList)), "blue"))
+    print(colored("--===================================================--", "blue"))
+    lookoutObj = libLookout.lookout(lookout_config)
     # abeebus is an open source project that takes files, finds all the IP addresses and GeoLocates them.
     # i've modified the project into a class/library. It retains a python list of all the parsed IP addresses
     #       abeebusObj.getResults() # returns abeebus results
     #       abeebusObj.getFilteredAddresses() # returns list of unique IPs parsed from text files
     #
-    geoObj=libGeo.Geo(fileList, lookout_config)
+    geoObj = libGeo.Geo(fileList, lookout_config)
 
-    cifObj=libCIFv5.CIFv5_Query(lookout_config)
-    fireHolObj=libFireHol.fireHol_Query(lookout_config)
-    scoutPrimeObj=libScoutPrime.ScoutPrime_Query(lookout_config)
-    shodanObj=libShodan.shodan_Query(lookout_config)
-    uniqueIPs=geoObj.getIPs(fileList[0])
+    cifObj = libCIFv5.CIFv5_Query(lookout_config)
+    fireHolObj = libFireHol.fireHol_Query(lookout_config)
+    scoutPrimeObj = libScoutPrime.ScoutPrime_Query(lookout_config)
+    shodanObj = libShodan.shodan_Query(lookout_config)
+    cymruObj = libTeamCymru.teamCymru(lookout_config)
+    uniqueIPs = geoObj.getIPs(fileList[0])
 
-    UniqueIPs={}
-    geoResults={}
-    print ("\n")
+    UniqueIPs = {}
+    geoResults = {}
+    print("\n")
     for filename in fileList:
         print(" ")
-        print (colored("===========================================================================", "blue"))
-        print (colored(("               Processing: " + filename),"blue"))
-        print(colored("===========================================================================","blue"))
-        UniqueIPs[filename]={}
-        UniqueIPs[filename]['IPs']=geoObj.getIPs(filename)
-        if args['geo']==True or args['all']==True:
+        print(colored("===========================================================================", "blue"))
+        print(colored(("               Processing: " + filename), "blue"))
+        print(colored("===========================================================================", "blue"))
+        UniqueIPs[filename] = {}
+        UniqueIPs[filename]['IPs'] = geoObj.getIPs(filename)
+        if args['geo'] == True or args['all'] == True:
             print("----: Geo Locating IP Addresses:")
             UniqueIPs[filename]['geoIP'] = geoObj.geoLocateLocal(UniqueIPs[filename]['IPs'])
-        if args['firehol']==True or args['all']==True:
+        if args['firehol'] == True or args['all'] == True:
             print("----: Querying Firehol Databases:")
-            UniqueIPs[filename]['FireHol']=fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
-        if args['scoutprime']==True or args['all']==True:
+            UniqueIPs[filename]['FireHol'] = fireHolObj.QueryFireHol(UniqueIPs[filename]['IPs'])
+        if args['scoutprime'] == True or args['all'] == True:
             print("----: Querying Scout Prime Databases")
-            UniqueIPs[filename]['ScoutPrime']=scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
-        if args['shodan']==True or args['all']==True:
-            print ("----: Querying Shodan:")
-            UniqueIPs[filename]['Shodan']=shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
-        if args['cif']==True or args['all']==True:
-            print ("----: Querying CIF:")
+            UniqueIPs[filename]['ScoutPrime'] = scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        if args['shodan'] == True or args['all'] == True:
+            print("----: Querying Shodan:")
+            UniqueIPs[filename]['Shodan'] = shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        if args['cif'] == True or args['all'] == True:
+            print("----: Querying CIF:")
             if cifObj.checkForCIF():
                 UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
+        if args['cymru'] == True or args['all'] == True:
+            print("----: Querying Cymru:")
+            UniqueIPs[filename]['cymru'] = cymruObj.queryCymru(UniqueIPs[filename]['IPs'], filename)
 
-    print ("\n")
-    print(colored("----==============================================================-----","blue"))
-    print (colored("--: Saving Data", "blue"))
-    print (colored(("--: Report Location:" + lookout_config['lookout_default_outputFolder']),"blue"))
-    print (colored("----=============================================================-----","blue"))
+    print("\n")
+    print(colored("----==============================================================-----", "blue"))
+    print(colored("--: Saving Data", "blue"))
+    print(colored(("--: Report Location:" + lookout_config['lookout_default_outputFolder']), "blue"))
+    print(colored("----=============================================================-----", "blue"))
     lookoutObj.buildReport(UniqueIPs)
-
-
-
