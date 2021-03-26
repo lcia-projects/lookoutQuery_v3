@@ -8,19 +8,19 @@
 #   -- csirtg.io : CIFv5 open source cyber threat database
 #   -- Abeebus: https://github.com/13Cubed/Abeebus : scrapes external ips from text file, geo locates them
 
+import argparse
+from glob import glob
+from os import path
+
 # Dependencies:
 import yaml
-import argparse
-from os import path
-from glob import glob
-from pprint import pprint
 from termcolor import colored
 
-# Custom Resource Libraries to make using outside API's easier
-from Resources import libLookout
-from Resources import libGeo
 from Resources import libCIFv5
 from Resources import libFireHol
+from Resources import libGeo
+# Custom Resource Libraries to make using outside API's easier
+from Resources import libLookout
 from Resources import libScoutPrime
 from Resources import libShodan
 from Resources import libTeamCymru
