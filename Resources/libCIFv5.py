@@ -22,7 +22,8 @@ class CIFv5_Query:
     #checks to see if CIF server is online
     def checkForCIF(self):
         print ("-- Checking For CIF Server --")
-        pingString="ping -o -c 1 -W 3000 " + self.serverAddress
+#        pingString="ping -o -c 1 -W 3000 " + self.serverAddress
+        pingString="ping -c 1 -W 3000 " + self.serverAddress
         ret = os.system(pingString)
         if ret != 0:
             print (" ERROR: No CIF Server Found")
