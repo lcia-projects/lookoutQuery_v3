@@ -2,6 +2,10 @@
 # Project Lookout Query Tool: takes either a file or folder, pulls out all public IP addresses and queries multiple
 #   sources for threat information. Then builds a report
 
+# ToDo:
+# - once files are processed in the "ToProcess" folder they are moved to a "completed" folder
+# - LOTS of error checking
+
 # Library for utility classes and methods:
 import csv
 
