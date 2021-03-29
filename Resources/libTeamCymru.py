@@ -1,6 +1,7 @@
 import requests
 import json
 from datetime import datetime
+from datetime import date
 from pprint import pprint
 
 class teamCymru:
@@ -42,11 +43,15 @@ class teamCymru:
             }
             queryList.append(strQuery)
 
+        today = date.today()
+        end_date_now = str(today.strftime("%m/%d/%Y")+" " + "00:00:00")
+
+
         payload = {
             'job_name': strJobName,
             'job_description': strJobDescription,
             'start_date': '01/01/2020 00:00:00',
-            'end_date': '03/12/2021 00:00:00',
+            'end_date': end_date_now,
             'priority': 25,
             'queries': queryList
         }
