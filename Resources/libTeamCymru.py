@@ -64,8 +64,9 @@ class teamCymru:
         }
         pprint (payload)
         response = requests.request("POST", url, data=json.dumps(payload), headers=headers)
-        print ("Response:", response)
-        print (response.content)
+        # print ("Response:", response)
+        # print (response.content)
+        print ("Sending Query to Team Cymru, please wait (this can take up to 2min)")
 
     def buildQueryArray(self, queryData):
         returnArray=[]
