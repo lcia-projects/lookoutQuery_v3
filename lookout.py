@@ -129,7 +129,7 @@ if __name__ == '__main__':
             print("----: Querying CIF:")
             if cifObj.checkForCIF():
                 UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
-        if args['greynoise'] == True:
+        if args['greynoise'] == True or args['all'] == True:
             print("----: Querying GreyNoise.io:")
             UniqueIPs[filename]['greynoise'] = greynoiseObj.QueryGreyNoise(UniqueIPs[filename]['IPs'], filename)
 
