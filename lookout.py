@@ -16,14 +16,15 @@ from os import path
 import yaml
 from termcolor import colored
 
+# Custom Resource Libraries to make using outside API's easier
 from Resources import libCIFv5
 from Resources import libFireHol
 from Resources import libGeo
-# Custom Resource Libraries to make using outside API's easier
 from Resources import libLookout
 from Resources import libScoutPrime
 from Resources import libShodan
 from Resources import libTeamCymru
+from Resources import libGreyNoiseCommunityAPI
 
 
 # Allows user to modify paremeters from commandline at runtime
@@ -40,6 +41,7 @@ def argsParse():
     parser.add_argument('--scoutprime', action="store_true", help='query LookingGlass Scout Prime', required=False)
     parser.add_argument('--shodan', action="store_true", help='Query Shodan (very slow)', required=False)
     parser.add_argument('--cymru', action="store_true", help='Query Team Cymru', required=False)
+    parser.add_argument('--greynoise', action="store_true", help='greynoise.io query', required=False)
     parser.add_argument('--all', action="store_true", help='Query All Available Modules', required=False)
     parser.add_argument('--fullreport', action="store_true", help='Full Indepth Report (MUCH longer)', required=False)
     parser.add_argument('--output', help='set an output folder, if blank, folder will be date-time', required=False)
@@ -100,6 +102,8 @@ if __name__ == '__main__':
     scoutPrimeObj = libScoutPrime.ScoutPrime_Query(lookout_config)
     shodanObj = libShodan.shodan_Query(lookout_config)
     cymruObj = libTeamCymru.teamCymru(lookout_config)
+    greynoiseObj= libGreyNoiseCommunityAPI.greynoise()
+
     uniqueIPs = geoObj.getIPs(fileList[0])
 
     UniqueIPs = {}
@@ -121,16 +125,24 @@ if __name__ == '__main__':
         if args['scoutprime'] == True or args['all'] == True:
             print("----: Querying Scout Prime Databases")
             UniqueIPs[filename]['ScoutPrime'] = scoutPrimeObj.QueryIPs(UniqueIPs[filename]['IPs'])
-        if args['shodan'] == True or args['all'] == True:
-            print("----: Querying Shodan:")
-            UniqueIPs[filename]['Shodan'] = shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
         if args['cif'] == True or args['all'] == True:
             print("----: Querying CIF:")
             if cifObj.checkForCIF():
                 UniqueIPs[filename]['CIF'] = cifObj.QueryCif(UniqueIPs[filename]['IPs'])
-        if args['cymru'] == True or args['all'] == True:
+        if args['greynoise'] == True:
+            print("----: Querying GreyNoise.io:")
+            UniqueIPs[filename]['greynoise'] = greynoiseObj.QueryGreyNoise(UniqueIPs[filename]['IPs'], filename)
+
+        # Not included in "All" because its REALLY slow..
+        if args['shodan'] == True:
+            print("----: Querying Shodan:")
+            UniqueIPs[filename]['Shodan'] = shodanObj.QueryIPs(UniqueIPs[filename]['IPs'])
+        # Not included in "All" because we can only do 10 queries a day
+        if args['cymru'] == True:
             print("----: Querying Cymru:")
             UniqueIPs[filename]['cymru'] = cymruObj.queryCymru(UniqueIPs[filename]['IPs'], filename)
+
+
 
     print("\n")
     print(colored("----==============================================================-----", "blue"))
