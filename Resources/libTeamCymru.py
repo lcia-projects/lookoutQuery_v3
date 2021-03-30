@@ -46,7 +46,6 @@ class teamCymru:
         today = date.today()
         end_date_now = str(today.strftime("%m/%d/%Y")+" " + "00:00:00")
 
-
         payload = {
             'job_name': strJobName,
             'job_description': strJobDescription,
@@ -62,10 +61,8 @@ class teamCymru:
             "Content-Type": "application/json",
             "Authorization": authToken
         }
-        pprint (payload)
+        #pprint (payload)
         response = requests.request("POST", url, data=json.dumps(payload), headers=headers)
-        # print ("Response:", response)
-        # print (response.content)
         print ("Sending Query to Team Cymru, please wait (this can take up to 2min)")
 
     def buildQueryArray(self, queryData):
