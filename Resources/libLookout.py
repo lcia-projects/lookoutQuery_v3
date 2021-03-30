@@ -28,7 +28,6 @@ class lookout:
                 if module == "cymru":
                     print ("cymru")
                 if module == "greynoise":
-                    print ("greynoise")
                     self.processGreyNoise(UniqueIPDict[file][module],file)
 
     def processFireHol(self, FileHolList, file):
@@ -109,8 +108,7 @@ class lookout:
         csvWriter.close()
 
     def processGreyNoise(self, GreyNoiseList, file):
-        print ("----===== Processing Grey Noise ====----")
-        print ("--: Writing GreyNoise Information :--")
+        print ("--: Writing GreyNoise:", file)
 
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
@@ -120,8 +118,6 @@ class lookout:
         reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_greynoise.csv"
 
         csvWriter = open(reportName, "w")
-
-
 
         for item in GreyNoiseList:
             strLineItem=item['ip']

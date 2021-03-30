@@ -5,11 +5,13 @@
 
 import requests
 import json
+from tqdm import tqdm
 from pprint import pprint
 
 class greynoise:
     def __init__(self):
-        print ("Grey Noise Object Created")
+        #print ("Grey Noise Object Created")
+        test=1
 
     def QueryGreyNoise(self, queryData, filename):
         responseList=[]
@@ -19,11 +21,11 @@ class greynoise:
             "User-Agent": "API-Reference-Test"
         }
 
-        for item in queryData:
+        for item in tqdm(queryData):
             #url = "https://api.greynoise.io/v3/community/ip"
             url = "https://api.greynoise.io/v3/community/"+item
             response = requests.request("GET", url, headers=headers)
             responseList.append(json.loads(response.text))
-            print (response.text)
+            #print (response.text)
 
         return (responseList.copy())

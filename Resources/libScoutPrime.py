@@ -4,7 +4,6 @@ from Resources.ScoutPrime import scoutprime
 
 class ScoutPrime_Query:
     def __init__(self, lookout_config):
-        print ("LOOKOUT CONFIG:", lookout_config)
         self.scout_api_token=lookout_config['scout_api_token']
         self.scout_server=lookout_config['scout_server']
         self.scout_query_url=lookout_config['scout_query_url']
