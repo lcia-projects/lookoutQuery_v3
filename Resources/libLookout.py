@@ -29,6 +29,8 @@ class lookout:
                     print ("cymru")
                 if module == "greynoise":
                     self.processGreyNoise(UniqueIPDict[file][module],file)
+                if module == "whois":
+                    self.processWhoIs(UniqueIPDict[file][module], file)
 
     def processFireHol(self, FileHolList, file):
         print ("--: Writing FireHol: ", file)
@@ -118,9 +120,13 @@ class lookout:
         reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_greynoise.csv"
 
         csvWriter = open(reportName, "w")
-
+        strHeader = "ip,name,noise,riot,link,last_seen\n"
+        csvWriter.write(strHeader)
         for item in GreyNoiseList:
-            strLineItem=item['ip']
+            if 'ip' in item.keys():
+                strLineItem=item['ip']
+            else:
+                strLineItem=" ,"
             if 'classification' in item.keys():
                 strLineItem+= ","+str(item['classification'])
             else:
@@ -154,4 +160,56 @@ class lookout:
             strLineItem += "\n"
             csvWriter.write(strLineItem)
         csvWriter.close()
+
+    def processWhoIs(self,WhoIsList, file):
+        print("--: Writing WhoIs", file)
+
+        reportName = file
+        reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
+        reportName = reportName.replace(".csv", "")
+        reportName = reportName.replace(" ", "_")
+        reportName = reportName.replace("/", "")
+        reportName = self.lookout_config['lookout_default_outputFolder'] + "/" + reportName + "_whois.csv"
+        csvWriter = open(reportName, "w")
+
+        strHeader="ip," + "nir," + "asn_registry," + "asn," + "asn_cidr," + "asn_country_code," + "asn_date," + \
+                  "asn_description," + "query," + "cidr," + "name," + "handle," + "range," + "description," + \
+                  "country," + "state," + "city," + "address," + "postal_code," + "emails," + "created," + \
+                  "updated," + "raw," + "referral," + "raw_referral\n"
+
+        csvWriter.write(strHeader)
+        for item in WhoIsList:
+            strLine=item['query']
+            for key in item.keys():
+                #strLine +=item['query'] + ","
+                if key in item.keys():
+                    if key == "nets":
+                        for net_entry in item[key]:
+                            for netItem in net_entry.keys():
+                                net_entry[netItem]=str(net_entry[netItem])
+                                net_entry[netItem]=net_entry[netItem].replace(","," ")
+                                net_entry[netItem]=net_entry[netItem].replace("\n", " ")
+                                net_entry[netItem]=net_entry[netItem].strip()
+                                strLine+=str(net_entry[netItem] )+","
+                    else:
+                        if item[key] != None:
+                            item[key]=item[key].replace(","," ")
+                            item[key] = item[key].replace("\n", " ")
+                            strLine=strLine + item[key]+","
+                        else:
+                            strLine = strLine + " " + ","
+                else:
+                    strLine=strLine+" ,"
+            strLine+="\n"
+            csvWriter.write(strLine)
+        csvWriter.close()
+
+
+
+
+
+
+
+
+
 

@@ -25,6 +25,7 @@ from Resources import libScoutPrime
 from Resources import libShodan
 from Resources import libTeamCymru
 from Resources import libGreyNoiseCommunityAPI
+from Resources import libWhois
 
 
 # Allows user to modify paremeters from commandline at runtime
@@ -42,6 +43,7 @@ def argsParse():
     parser.add_argument('--shodan', action="store_true", help='Query Shodan (very slow)', required=False)
     parser.add_argument('--cymru', action="store_true", help='Query Team Cymru', required=False)
     parser.add_argument('--greynoise', action="store_true", help='greynoise.io query', required=False)
+    parser.add_argument('--whois', action="store_true", help='greynoise.io query', required=False)
     parser.add_argument('--all', action="store_true", help='Query All Available Modules', required=False)
     parser.add_argument('--fullreport', action="store_true", help='Full Indepth Report (MUCH longer)', required=False)
     parser.add_argument('--output', help='set an output folder, if blank, folder will be date-time', required=False)
@@ -103,6 +105,7 @@ if __name__ == '__main__':
     shodanObj = libShodan.shodan_Query(lookout_config)
     cymruObj = libTeamCymru.teamCymru(lookout_config)
     greynoiseObj= libGreyNoiseCommunityAPI.greynoise()
+    whoisObj=libWhois.bulkWhois(lookout_config)
 
     uniqueIPs = geoObj.getIPs(fileList[0])
 
@@ -133,6 +136,10 @@ if __name__ == '__main__':
             print("----: Querying GreyNoise.io:")
             UniqueIPs[filename]['greynoise'] = greynoiseObj.QueryGreyNoise(UniqueIPs[filename]['IPs'], filename)
 
+        if args['whois'] == True or args['all'] == True:
+            print("----: Querying BulkWhoIs:")
+            UniqueIPs[filename]['whois'] = whoisObj.queryIPs(UniqueIPs[filename]['IPs'])
+
         # Not included in "All" because its REALLY slow..
         if args['shodan'] == True:
             print("----: Querying Shodan:")
@@ -141,8 +148,6 @@ if __name__ == '__main__':
         if args['cymru'] == True:
             print("----: Querying Cymru:")
             UniqueIPs[filename]['cymru'] = cymruObj.queryCymru(UniqueIPs[filename]['IPs'], filename)
-
-
 
     print("\n")
     print(colored("----==============================================================-----", "blue"))

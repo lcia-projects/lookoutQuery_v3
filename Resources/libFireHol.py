@@ -64,7 +64,6 @@ class fireHol_Query:
     def processBlockLists(self):
         print ("----: Pulling all IP data from Datasets, This could take a min or two, please wait ...")
         blockListFileNames=fileList = glob((self.fireHol_dataFolder+"/*"))
-
         for file in blockListFileNames:
             if ".ipset" in file: # @@ figure out how to add an OR for .netsets, eventually figure out how to add the founders of countries
                 with open(file, "r") as filehandler:

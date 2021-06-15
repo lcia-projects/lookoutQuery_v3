@@ -10,8 +10,7 @@ from pprint import pprint
 
 class greynoise:
     def __init__(self):
-        #print ("Grey Noise Object Created")
-        test=1
+        print ("Grey Noise Object Created")
 
     def QueryGreyNoise(self, queryData, filename):
         responseList=[]
@@ -26,6 +25,5 @@ class greynoise:
             url = "https://api.greynoise.io/v3/community/"+item
             response = requests.request("GET", url, headers=headers)
             responseList.append(json.loads(response.text))
-            #print (response.text)
 
         return (responseList.copy())
