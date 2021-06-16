@@ -164,6 +164,7 @@ class lookout:
     def processWhoIs(self,WhoIsList, file):
         print("--: Writing WhoIs", file)
 
+        # formats the report filename
         reportName = file
         reportName = reportName.replace(self.lookout_config["lookout_default_inputFolder"], "")
         reportName = reportName.replace(".csv", "")
@@ -181,9 +182,8 @@ class lookout:
         for item in WhoIsList:
             strLine=item['query']
             for key in item.keys():
-                #strLine +=item['query'] + ","
                 if key in item.keys():
-                    if key == "nets":
+                    if key == "nets": #each entry might have a multiple "nets" entries in a list
                         for net_entry in item[key]:
                             for netItem in net_entry.keys():
                                 net_entry[netItem]=str(net_entry[netItem])
@@ -203,13 +203,3 @@ class lookout:
             strLine+="\n"
             csvWriter.write(strLine)
         csvWriter.close()
-
-
-
-
-
-
-
-
-
-
